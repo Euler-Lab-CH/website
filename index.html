@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EULER LAB — GenAI Beratung Schweiz: Agents, RAG, Governance & Swiss Hosting</title>
+<meta name="description" content="GenAI-Beratung für Schweizer Unternehmen: Coding-Agents einführen, RAG-Systeme produktiv machen, AI-Governance & Compliance (FINMA-tauglich), Azure/GCP/AWS-Wahl und Hosting in der Schweiz. Erfahrung aus GenAI-Teams regulierter Grossunternehmen.">
+<meta name="keywords" content="GenAI Beratung Schweiz, AI Consulting Zürich, RAG Enterprise, Coding Agents, Vibe Coding, AI Governance, FINMA AI Compliance, Swiss Hosting LLM, Prompt Injection, Make or Buy AI">
+<meta name="robots" content="index,follow">
+<meta name="author" content="EULER LAB GmbH">
+<link rel="canonical" href="https://euler-lab.ch/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EULER LAB">
+<meta property="og:title" content="EULER LAB — GenAI Beratung Schweiz: Agents, RAG, Governance & Swiss Hosting">
+<meta property="og:description" content="GenAI im Unternehmen produktiv machen — mit Erfahrung aus GenAI-Teams regulierter Schweizer Grossunternehmen. Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting.">
+<meta property="og:url" content="https://euler-lab.ch/">
+<meta property="og:image" content="https://euler-lab.ch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_CH">
+<meta property="og:locale:alternate" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EULER LAB — GenAI Beratung Schweiz">
+<meta name="twitter:description" content="Agents, RAG, Governance & Swiss Hosting — Enterprise-GenAI-Beratung aus der Praxis, Zürich.">
+<meta name="twitter:image" content="https://euler-lab.ch/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F9FE; --bg-2:#EFF3FB; --ink:#0D1220; --ink-soft:#3A4358; --muted:#69748C;
+    --a1:#0981B5; --a2:#18CBF6; --grad:linear-gradient(100deg,var(--a1),var(--a2));
+    --line:rgba(13,18,32,.10); --glass:rgba(255,255,255,.62); --glass-strong:rgba(255,255,255,.82);
+    --shadow:0 18px 50px rgba(13,18,32,.08); --glow:0 0 0 1px rgba(9,129,181,.14), 0 16px 48px rgba(9,129,181,.12);
+    --disp:'Space Grotesk',sans-serif; --sans:'Inter',-apple-system,sans-serif; --mono:'IBM Plex Mono',monospace;
+    --r:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+  .en-t{display:none}
+  body.en .de-t{display:none}
+  body.en .en-t{display:inline}
+  body.en .en-t.block{display:block}
+
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .mono-a{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em}
+  h2{font-size:clamp(30px,3.8vw,46px);line-height:1.1;margin-bottom:24px;font-weight:600}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .body-l{font-size:clamp(17px,1.5vw,20px);line-height:1.7;color:var(--ink-soft)}
+  p+p{margin-top:1.2em}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-size:15.5px;font-weight:600;text-decoration:none;padding:15px 30px;border-radius:12px;transition:transform .18s,box-shadow .18s;cursor:pointer;border:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-grad{background:var(--grad);color:#fff;box-shadow:0 10px 30px rgba(9,129,181,.28)}
+  .btn-grad:hover{box-shadow:0 16px 40px rgba(9,129,181,.36)}
+  .btn-glass{background:var(--glass-strong);color:var(--ink);border:1px solid var(--line);backdrop-filter:blur(12px)}
+  .btn-glass:hover{box-shadow:var(--shadow)}
+
+  /* Accent line */
+  .acc-line{height:2px;width:72px;background:var(--grad);border-radius:2px;margin:18px 0 0;box-shadow:0 0 14px rgba(9,129,181,.5)}
+
+  /* Nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(247,249,254,.7);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--disp);font-size:21px;font-weight:700;letter-spacing:-.02em}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:12px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--a1)}
+  .lang-toggle{font-family:var(--mono);font-size:12px;letter-spacing:.1em;border:1px solid var(--line);background:var(--glass-strong);padding:6px 13px;cursor:pointer;color:var(--ink-soft);border-radius:8px}
+  .lang-toggle:hover{border-color:var(--a1);color:var(--a1)}
+
+  /* Hero with three.js canvas */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:140px 0 90px}
+  #bg3d{position:absolute;inset:0;z-index:0}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(247,249,254,0) 58%,var(--bg) 97%);pointer-events:none}
+  .hero-content{position:relative;z-index:2;max-width:860px}
+  .hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--glass-strong);border:1px solid var(--line);backdrop-filter:blur(12px);border-radius:999px;padding:8px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);box-shadow:0 6px 24px rgba(13,18,32,.06)}
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--grad);box-shadow:0 0 10px rgba(24,203,246,.8)}
+  h1{font-size:clamp(38px,5.8vw,76px);line-height:1.04;font-weight:700;letter-spacing:-.03em;margin-top:28px}
+  .hero-sub{max-width:660px;margin-top:28px;font-size:clamp(17px,1.6vw,20px);line-height:1.7;color:var(--ink-soft)}
+  .hero-ctas{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero-formula{position:absolute;right:28px;bottom:26px;z-index:2;font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+
+  section{padding:110px 0;position:relative}
+  .sec-head{margin-bottom:56px;max-width:780px}
+
+  /* Glass cards */
+  .glass{background:var(--glass);border:1px solid rgba(255,255,255,.8);outline:1px solid var(--line);backdrop-filter:blur(14px);border-radius:var(--r);box-shadow:var(--shadow)}
+
+  /* Manifesto */
+  .split{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+  .split .sticky{position:sticky;top:110px}
+  .manifesto p{font-size:clamp(17px,1.6vw,21px);line-height:1.75;color:var(--ink-soft)}
+  .manifesto .lead{font-family:var(--disp);font-size:clamp(22px,2.4vw,30px);line-height:1.4;color:var(--ink);font-weight:500;margin-bottom:1.3em}
+  .manifesto strong{color:var(--ink);font-weight:600}
+
+  /* Services */
+  .services{background:var(--bg-2)}
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .svc{padding:38px 36px;position:relative;overflow:hidden}
+  .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);border-radius:var(--r) var(--r) 0 0;box-shadow:0 2px 14px rgba(9,129,181,.35)}
+  .svc .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--a1);display:block;margin-bottom:18px}
+  .svc h3{font-size:clamp(20px,2vw,26px);font-weight:600;margin-bottom:14px}
+  .svc p{font-size:15.5px;color:var(--ink-soft)}
+  .svc ul{list-style:none;margin-top:20px;border-top:1px solid var(--line)}
+  .svc li{padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink-soft);display:flex;gap:12px}
+  .svc li:last-child{border-bottom:none}
+  .svc li::before{content:"→";background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;flex-shrink:0}
+
+  /* Positions */
+  .pos-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pos{padding:36px;border-radius:var(--r);background:var(--glass);outline:1px solid var(--line);border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(14px);box-shadow:var(--shadow);position:relative}
+  .pos .p-num{font-family:var(--disp);font-size:42px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;display:block;margin-bottom:18px}
+  .pos h3{font-size:20px;font-weight:600;line-height:1.3;margin-bottom:12px}
+  .pos p{font-size:15px;color:var(--ink-soft)}
+
+  /* Engagement */
+  .eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .eng{padding:38px 34px;display:flex;flex-direction:column}
+  .eng .mono{display:block;margin-bottom:20px}
+  .eng h3{font-size:21px;font-weight:600;margin-bottom:12px}
+  .eng p{font-size:15px;color:var(--ink-soft);flex:1}
+  .eng .dur{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Team */
+  .team{background:var(--bg-2)}
+  .member{display:grid;grid-template-columns:300px 1fr;gap:50px;padding:36px 38px;margin-bottom:20px}
+  .member h3{font-size:23px;font-weight:600;margin-bottom:4px}
+  .member .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .member p{color:var(--ink-soft);font-size:15.5px}
+
+  /* Workshop CTA */
+  .ws-cta-panel{padding:64px 56px;position:relative;overflow:hidden}
+  .ws-cta-panel::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(9,129,181,.14),transparent 65%);top:-200px;right:-120px;pointer-events:none}
+  .ws-cta-panel::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(24,203,246,.13),transparent 65%);bottom:-180px;left:-80px;pointer-events:none}
+  .ws-cta-panel h2{max-width:720px}
+  .ws-cta-panel p{color:var(--ink-soft);max-width:620px;font-size:17px}
+  .ws-cta-panel .btn-row{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+
+  /* FAQ */
+  details{background:var(--glass);outline:1px solid var(--line);border:1px solid rgba(255,255,255,.8);border-radius:14px;backdrop-filter:blur(12px);margin-bottom:14px;box-shadow:0 8px 28px rgba(13,18,32,.05);overflow:hidden}
+  summary{cursor:pointer;padding:24px 28px;font-family:var(--disp);font-size:clamp(16.5px,1.6vw,20px);font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;flex-shrink:0;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 28px 26px;color:var(--ink-soft);max-width:820px;font-size:15.5px}
+
+  /* Contact */
+  .contact{text-align:left}
+  .contact h2{font-size:clamp(32px,4.6vw,60px);max-width:860px}
+  .contact .body-l{max-width:600px;margin-top:22px}
+  .contact .btn{margin-top:40px}
+  .contact .email{margin-top:24px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .contact .email a{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+
+  /* Footer */
+  footer{background:var(--bg-2);border-top:1px solid var(--line);padding:64px 0 40px;font-size:14px;color:var(--muted)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .foot-grid h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px;font-weight:500}
+  .foot-grid a{display:block;text-decoration:none;padding:4px 0;color:var(--muted)}
+  .foot-grid a:hover{color:var(--a1)}
+  .foot-legal{font-size:13px;line-height:1.7;max-width:520px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em}
+
+  /* Mobile */
+  @media(max-width:880px){
+    .split,.svc-grid,.pos-grid,.eng-grid,.member,.foot-grid{grid-template-columns:1fr;gap:20px}
+    .split .sticky{position:static}
+    .nav-links a.nav-item{display:none}
+    section{padding:80px 0}
+    .hero{min-height:88vh;padding:120px 0 70px}
+    .hero-formula{display:none}
+    .ws-cta-panel{padding:44px 28px}
+    .member{padding:30px 26px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#">
+      <svg aria-hidden="true" style="display:block" width="38" height="38" viewBox="110 5 590 590" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-806.849,-1999.23)">
+        <g transform="matrix(1,0,0,1,0,517)">
+            <g transform="matrix(1,0,0,1,0,-10.6606)">
+                <g transform="matrix(1,0,0,1,172.555,-810.826)">
+                    <path d="M778.329,2644.79C758.53,2527.31 824.166,2388.45 1024.92,2320.35C1123.13,2287.04 1198.62,2308.05 1238.06,2345.68C1295.46,2400.44 1303.92,2515.77 1167.7,2619.79C1122.76,2654.11 1060.33,2688.43 977.186,2718.34C1038.12,2746.38 1130.14,2741.05 1239.41,2681.19L1294.23,2651.16L1318.04,2770.22C1101.5,2888.86 913.67,2858.03 831.833,2760.5L785.055,2771.72L755.906,2650.16L778.329,2644.79ZM900.46,2612.56C1028.33,2572.37 1104.32,2522.41 1138.67,2474.15C1145.03,2465.22 1149.58,2456.71 1151.86,2448.55C1153.06,2444.26 1154.26,2440.36 1152.63,2437.18C1147.98,2428.05 1134.9,2428.31 1119.74,2428.36C1103.62,2428.42 1085.28,2431.87 1065.08,2438.72C950.038,2477.74 897.059,2548.06 900.46,2612.56Z" style="fill:url(#_Linear1);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,172.555,-810.826)">
+                    <g transform="matrix(1,-0,-0,1,634.294,2303.72)">
+                        <use xlink:href="#_Image2" x="144.035" y="308.876" width="199px" height="148px"/>
+                    </g>
+                </g>
+            </g>
+            </g></g>
+<defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(440.252,0,0,309.223,982.748,2506.32)"><stop offset="0" style="stop-color:rgb(24,203,246);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(9,129,181);stop-opacity:1"/></linearGradient>
+        <image id="_Image2" width="199px" height="148px" xlink:href="data:image/png;base64,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"/>
+    </defs>
+</svg>
+      <span style="font-family:'Montserrat',var(--sans);font-weight:300;font-size:16px;letter-spacing:.3em;color:var(--ink)">EULER&#8201;<span style="color:var(--muted)">LAB</span></span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-item" href="#leistungen"><span class="de-t">Leistungen</span><span class="en-t">Services</span></a>
+      <a class="nav-item" href="#standpunkte"><span class="de-t">Standpunkte</span><span class="en-t">Positions</span></a>
+      <a class="nav-item" href="#team">Team</a>
+      <a class="nav-item" href="workshop.html">Workshop</a>
+      <a class="nav-item" href="#kontakt"><span class="de-t">Kontakt</span><span class="en-t">Contact</span></a>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div id="bg3d"></div>
+  <div class="wrap hero-content">
+    <span class="hero-badge"><span class="dot"></span><span class="de-t">Enterprise GenAI Advisory · Zürich</span><span class="en-t">Enterprise GenAI Advisory · Zurich</span></span>
+    <h1>
+      <span class="de-t">Jedes Unternehmen hat eine GenAI-Strategie. <span class="grad-text">Wenige haben Systeme in Produktion.</span></span>
+      <span class="en-t block">Every company has a GenAI strategy. <span class="grad-text">Few have systems in production.</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="de-t">euler-lab ist eine Beratung für Unternehmen, die generative KI nicht evaluieren, sondern einsetzen wollen. Wir haben Agents, RAG-Systeme und Governance-Frameworks in regulierten Schweizer Grossunternehmen aufgebaut — und bringen diese Erfahrung dorthin, wo sie gerade fehlt: in Ihr Haus.</span>
+      <span class="en-t block">euler-lab is a consultancy for organisations that want to deploy generative AI, not evaluate it indefinitely. We built agents, RAG systems and governance frameworks inside regulated Swiss enterprises — and we bring that experience to where it is missing: your organisation.</span>
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-grad" href="#kontakt"><span class="de-t">Erstgespräch vereinbaren</span><span class="en-t">Book an intro call</span></a>
+      <a class="btn btn-glass" href="workshop.html"><span class="de-t">Executive Workshop</span><span class="en-t">Executive workshop</span> →</a>
+    </div>
+  </div>
+  <span class="hero-formula">e = lim (1 + 1/n)ⁿ ≈ 2.718281828…</span>
+</header>
+
+<section class="manifesto">
+  <div class="wrap split">
+    <div class="sticky">
+      <span class="mono mono-a"><span class="de-t">§ 1 — Ausgangslage</span><span class="en-t">§ 1 — The situation</span></span>
+      <div class="acc-line"></div>
+    </div>
+    <div>
+      <p class="lead">
+        <span class="de-t">Zwischen einem GenAI-Piloten und einem produktiven System liegt in einem regulierten Unternehmen kein Sprint. Es liegt dazwischen: Datenresidenz, Risikoabnahme, Cloud-Verträge, Security-Reviews, Betriebskonzepte — und eine Organisation, die mitkommen muss.</span>
+        <span class="en-t block">In a regulated enterprise, the distance between a GenAI pilot and a production system is not a sprint. In between sit data residency, risk sign-off, cloud contracts, security reviews, operating models — and an organisation that has to come along.</span>
+      </p>
+      <p>
+        <span class="de-t">Wir kennen diese Strecke, weil wir sie selbst gegangen sind. Im letzten Jahr haben wir in Unternehmen wie grossen Schweizer Versicherern und Banken untersucht und mitgestaltet, wie Enterprise-GenAI tatsächlich funktioniert: wie Entwicklungsteams mit Coding-Agents arbeiten, wie RAG-Systeme an echten Unternehmensdaten bestehen, welche Governance Audits standhält, was Azure, GCP und AWS für GenAI wirklich taugen, wie man in der Schweiz hostet, wie man LLM-Systeme überwacht und gegen Prompt Injection absichert — und wann man kauft statt baut.</span>
+        <span class="en-t block">We know this road because we have walked it ourselves. Over the past year, inside organisations such as major Swiss insurers and banks, we examined and shaped how enterprise GenAI actually works: how engineering teams work with coding agents, how RAG systems hold up against real corporate data, which governance survives audits, what Azure, GCP and AWS are actually worth for GenAI, how to host in Switzerland, how to monitor LLM systems and harden them against prompt injection — and when to buy instead of build.</span>
+      </p>
+      <p>
+        <span class="de-t"><strong>Das ist kein Beratungswissen aus zweiter Hand.</strong> Es ist operative Erfahrung aus Teams, die diese Systeme heute betreiben. Wir haben euler-lab gegründet, weil sehr viele Unternehmen genau diese Fragen gerade jetzt beantworten müssen — und es keinen Grund gibt, dass jedes von ihnen dieselben teuren Umwege geht.</span>
+        <span class="en-t block"><strong>This is not second-hand consulting knowledge.</strong> It is operational experience from teams running these systems today. We founded euler-lab because a great number of companies need to answer exactly these questions right now — and there is no reason each of them should take the same expensive detours.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono mono-a"><span class="de-t">§ 2 — Leistungen</span><span class="en-t">§ 2 — Services</span></span>
+      <h2 style="margin-top:16px"><span class="de-t">Vier Felder. In allen haben wir geliefert, bevor wir beraten haben.</span><span class="en-t block">Four fields. In all of them, we delivered before we advised.</span></h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc glass">
+        <span class="num">01 / GOVERNANCE</span>
+        <h3><span class="de-t">Governance, Compliance & Risiko</span><span class="en-t">Governance, Compliance & Risk</span></h3>
+        <p><span class="de-t">Die meisten GenAI-Initiativen scheitern nicht an der Technik, sondern an der Freigabe. Wir entwerfen AI-Richtlinien, Risiko-Frameworks und Abnahmeprozesse, die vor Audit, Recht und Aufsicht bestehen — und schlank genug sind, dass Teams tatsächlich damit arbeiten. Wir wissen aus eigener Erfahrung, welche Kontrollen ein Prüfer sehen will und wo Governance zur Ausrede wird, nichts zu tun.</span><span class="en-t block">Most GenAI initiatives don't fail on technology — they fail at sign-off. We design AI policies, risk frameworks and approval processes that hold up before audit, legal and regulators — and stay lean enough that teams actually work with them. We know first-hand which controls an auditor wants to see, and where governance becomes an excuse to do nothing.</span></p>
+        <ul>
+          <li><span class="de-t">AI-Policy & Nutzungsrichtlinien, revisionsfähig</span><span class="en-t">AI policy & usage guidelines, audit-ready</span></li>
+          <li><span class="de-t">Risiko-Klassifizierung für AI-Use-Cases</span><span class="en-t">Risk classification for AI use cases</span></li>
+          <li><span class="de-t">Freigabeprozess vom Use-Case bis zur Produktion</span><span class="en-t">Approval process from use case to production</span></li>
+        </ul>
+      </div>
+      <div class="svc glass">
+        <span class="num">02 / AGENTS</span>
+        <h3><span class="de-t">Agents & das Zeitalter des Vibe Coding</span><span class="en-t">Agents & the Age of Vibe Coding</span></h3>
+        <p><span class="de-t">Coding-Agents verändern, wie Software entsteht — schneller, als die meisten Organisationen ihre Prozesse anpassen. Die Frage ist nicht mehr, ob Ihre Teams mit Agents arbeiten, sondern ob sie es kontrolliert tun. Wir begleiten Engineering-Organisationen von den ersten Experimenten bis zur skalierten Adoption — und trainieren Teams direkt an ihrer eigenen Codebasis, nicht an Folien.</span><span class="en-t block">Coding agents are changing how software gets built — faster than most organisations adapt their processes. The question is no longer whether your teams work with agents, but whether they do so in a controlled way. We guide engineering organisations from first experiments to scaled adoption — and train teams directly on their own codebase, not on slides.</span></p>
+        <ul>
+          <li><span class="de-t">Agent-Adoption-Strategie & Rollout-Plan</span><span class="en-t">Agent adoption strategy & rollout plan</span></li>
+          <li><span class="de-t">Hands-on-Enablement an Ihrer Codebasis</span><span class="en-t">Hands-on enablement on your own codebase</span></li>
+          <li><span class="de-t">Review- & Qualitätsprozesse für agentischen Code</span><span class="en-t">Review & quality processes for agentic code</span></li>
+        </ul>
+      </div>
+      <div class="svc glass">
+        <span class="num">03 / RAG & PLATTFORM</span>
+        <h3><span class="de-t">RAG & Plattform-Architektur</span><span class="en-t">RAG & Platform Architecture</span></h3>
+        <p><span class="de-t">Retrieval-Augmented Generation ist auf Folien einfach und an echten Unternehmensdaten schwer. Berechtigungen, Dokumentqualität, Evaluation, Halluzinationskontrolle: Hier entscheidet sich, ob ein System Vertrauen verdient. Wir entwerfen RAG- und Plattform-Architekturen auf Azure, GCP oder AWS — inklusive der unbequemen Teile: Evaluations-Pipelines, Monitoring, Kostenkontrolle und Abwehr von Prompt Injection.</span><span class="en-t block">Retrieval-augmented generation is easy on slides and hard on real corporate data. Permissions, document quality, evaluation, hallucination control: this is where a system earns trust — or doesn't. We design RAG and platform architectures on Azure, GCP or AWS — including the uncomfortable parts: evaluation pipelines, monitoring, cost control and prompt-injection defense.</span></p>
+        <ul>
+          <li><span class="de-t">Referenzarchitektur für Ihren Cloud-Stack</span><span class="en-t">Reference architecture for your cloud stack</span></li>
+          <li><span class="de-t">Evaluations- & Monitoring-Konzept für LLM-Systeme</span><span class="en-t">Evaluation & monitoring concept for LLM systems</span></li>
+          <li><span class="de-t">Security-Review inkl. Prompt-Injection-Härtung</span><span class="en-t">Security review incl. prompt-injection hardening</span></li>
+        </ul>
+      </div>
+      <div class="svc glass">
+        <span class="num">04 / SWISS HOSTING</span>
+        <h3><span class="de-t">Swiss Hosting & Sourcing</span><span class="en-t">Swiss Hosting & Sourcing</span></h3>
+        <p><span class="de-t">«Können wir das in der Schweiz hosten?» ist meist die zweite Frage in jedem Steering Committee — direkt nach «Was darf das kosten?». Wir beantworten beide: Datenresidenz, Schweizer Cloud-Regionen, Souveränitätsanforderungen, On-Prem-Inferenz. Wir zeigen, was regulatorisch nötig, was technisch sinnvoll und was schlicht teure Symbolik ist — inklusive der Make-or-Buy-Frage.</span><span class="en-t block">"Can we host this in Switzerland?" is usually the second question in any steering committee — right after "what will it cost?". We answer both: data residency, Swiss cloud regions, sovereignty requirements, on-prem inference. We show what is regulatorily required, what is technically sensible, and what is merely expensive symbolism — including the make-or-buy question.</span></p>
+        <ul>
+          <li><span class="de-t">Hosting-Strategie Schweiz (Cloud / Hybrid / On-Prem)</span><span class="en-t">Swiss hosting strategy (cloud / hybrid / on-prem)</span></li>
+          <li><span class="de-t">Make-or-Buy-Entscheidungsraster mit Kostenmodell</span><span class="en-t">Make-or-buy decision matrix with cost model</span></li>
+          <li><span class="de-t">Anbieter-Evaluation & Vertragsbegleitung</span><span class="en-t">Vendor evaluation & contract support</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="standpunkte">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono mono-a"><span class="de-t">§ 3 — Standpunkte</span><span class="en-t">§ 3 — Positions</span></span>
+      <h2 style="margin-top:16px"><span class="de-t">Was wir gelernt haben — und vertreten.</span><span class="en-t block">What we have learned — and stand for.</span></h2>
+      <p class="body-l"><span class="de-t">Beratung ohne Haltung ist Moderation. Vier Überzeugungen aus einem Jahr Enterprise-GenAI-Praxis, an denen Sie uns messen können.</span><span class="en-t block">Advisory without conviction is facilitation. Four beliefs from a year of enterprise GenAI practice — hold us to them.</span></p>
+    </div>
+    <div class="pos-grid">
+      <div class="pos">
+        <span class="p-num">I</span>
+        <h3><span class="de-t">Governance ist ein Beschleuniger — wenn man sie richtig baut.</span><span class="en-t">Governance is an accelerator — if you build it right.</span></h3>
+        <p><span class="de-t">In Unternehmen mit klaren AI-Freigabeprozessen gehen Use Cases schneller live, nicht langsamer. Was Projekte tötet, ist nicht Kontrolle, sondern Unklarheit: niemand weiss, wer Ja sagen darf. Eine gute Governance beantwortet diese Frage in Tagen statt Quartalen.</span><span class="en-t block">In organisations with clear AI approval processes, use cases go live faster, not slower. What kills projects is not control but ambiguity: nobody knows who is allowed to say yes. Good governance answers that question in days, not quarters.</span></p>
+      </div>
+      <div class="pos">
+        <span class="p-num">II</span>
+        <h3><span class="de-t">Vibe Coding ist kein Hype-Begriff. Es ist ein Organisationsproblem.</span><span class="en-t">Vibe coding is not a hype term. It is an organisational problem.</span></h3>
+        <p><span class="de-t">Die Technologie ist da und sie funktioniert. Was fehlt, sind Review-Kultur, Verantwortlichkeiten und Ausbildung. Teams, die Agents ohne neue Arbeitsweisen einsetzen, produzieren schneller Code — und schneller technische Schuld. Der Unterschied liegt nicht im Tool, sondern im Team.</span><span class="en-t block">The technology is here and it works. What's missing are review culture, accountability and training. Teams that adopt agents without new ways of working produce code faster — and technical debt faster. The difference is not the tool. It is the team.</span></p>
+      </div>
+      <div class="pos">
+        <span class="p-num">III</span>
+        <h3><span class="de-t">Ein RAG-System ohne Evaluation ist eine Meinung.</span><span class="en-t">A RAG system without evaluation is an opinion.</span></h3>
+        <p><span class="de-t">Wer nicht systematisch misst, ob Antworten korrekt, vollständig und berechtigungskonform sind, betreibt keine Wissensplattform, sondern ein Risiko mit Chat-Interface. Evaluation, Monitoring und Prompt-Injection-Abwehr gehören in die Architektur — nicht in den Folgeauftrag.</span><span class="en-t block">If you don't systematically measure whether answers are correct, complete and permission-compliant, you are not running a knowledge platform — you are running a risk with a chat interface. Evaluation, monitoring and prompt-injection defense belong in the architecture, not in the follow-up engagement.</span></p>
+      </div>
+      <div class="pos">
+        <span class="p-num">IV</span>
+        <h3><span class="de-t">Kaufen schlägt Bauen. Meistens. Aber nicht immer.</span><span class="en-t">Buy beats build. Usually. But not always.</span></h3>
+        <p><span class="de-t">Der Markt liefert inzwischen exzellente Bausteine — wer 2026 noch eine eigene Vektordatenbank schreibt, hat meist ein anderes Problem. Selbst bauen lohnt sich dort, wo Ihre Daten, Ihre Prozesse oder Ihre Regulierung tatsächlich einzigartig sind. Diese Grenze sauber zu ziehen, spart mehr Geld als jede Lizenzverhandlung.</span><span class="en-t block">The market now offers excellent building blocks — anyone still writing their own vector database in 2026 usually has a different problem. Building yourself pays off where your data, your processes or your regulation are actually unique. Drawing that line cleanly saves more money than any licence negotiation.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono mono-a"><span class="de-t">§ 4 — Zusammenarbeit</span><span class="en-t">§ 4 — Working with us</span></span>
+      <h2 style="margin-top:16px"><span class="de-t">Drei Wege, mit uns zu arbeiten.</span><span class="en-t block">Three ways to work with us.</span></h2>
+      <p class="body-l"><span class="de-t">Wir arbeiten neben unseren operativen Rollen — bewusst. Das hält unser Wissen aktuell und unsere Kapazität knapp. Wir nehmen wenige Mandate an und liefern dafür ohne Junior-Staffing.</span><span class="en-t block">We work alongside our operational roles — deliberately. It keeps our knowledge current and our capacity scarce. We accept few engagements, and deliver without junior staffing.</span></p>
+    </div>
+    <div class="eng-grid">
+      <div class="eng glass">
+        <span class="mono mono-a">A — Assessment</span>
+        <h3><span class="de-t">Standortbestimmung</span><span class="en-t">Readiness Assessment</span></h3>
+        <p><span class="de-t">Wir prüfen Ihre GenAI-Initiativen, Architektur und Governance gegen den Stand der Praxis in regulierten Unternehmen. Sie erhalten ein schriftliches Gutachten mit priorisierten Massnahmen — und eine ehrliche Antwort auf die Frage, wo Sie stehen.</span><span class="en-t block">We review your GenAI initiatives, architecture and governance against the state of practice in regulated enterprises. You receive a written assessment with prioritised actions — and an honest answer to where you stand.</span></p>
+        <span class="dur"><span class="de-t">2–3 Wochen · Fixpreis</span><span class="en-t">2–3 weeks · fixed price</span></span>
+      </div>
+      <div class="eng glass">
+        <span class="mono mono-a">B — Programm</span>
+        <h3><span class="de-t">Enablement-Programm</span><span class="en-t">Enablement Programme</span></h3>
+        <p><span class="de-t">Wir bringen eine Ihrer Einheiten in den produktiven Agent- und GenAI-Betrieb: Arbeitsweisen, Tooling, Governance und ein erster Use Case bis zur Abnahme. Ihre Teams lernen am eigenen System — wir bleiben, bis es trägt.</span><span class="en-t block">We take one of your units into productive agent and GenAI operations: ways of working, tooling, governance and a first use case through to sign-off. Your teams learn on their own system — we stay until it holds.</span></p>
+        <span class="dur"><span class="de-t">2–4 Monate · modular</span><span class="en-t">2–4 months · modular</span></span>
+      </div>
+      <div class="eng glass">
+        <span class="mono mono-a">C — Sparring</span>
+        <h3><span class="de-t">Sparring auf Stufe Führung</span><span class="en-t">Executive Sparring</span></h3>
+        <p><span class="de-t">Laufende Begleitung für CTOs, CIOs und Programmleitungen: Architektur-Entscheide, Anbieterwahl, Steering-Vorbereitung, Zweitmeinung vor grossen Commitments. Diskret, auf Abruf, ohne Overhead.</span><span class="en-t block">Ongoing counsel for CTOs, CIOs and programme leads: architecture decisions, vendor selection, steering preparation, second opinions before major commitments. Discreet, on call, without overhead.</span></p>
+        <span class="dur"><span class="de-t">Retainer · monatlich kündbar</span><span class="en-t">Retainer · monthly notice</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono mono-a">§ 5 — Team</span>
+      <h2 style="margin-top:16px"><span class="de-t">Wir beraten nebenbei. Wir bauen hauptberuflich.</span><span class="en-t block">Advisory is our side of the desk. Building is our day job.</span></h2>
+      <p class="body-l"><span class="de-t">Jedes Mandat wird von Personen betreut, die heute GenAI-Systeme in regulierten Schweizer Unternehmen verantworten. Das ist unser einziges Verkaufsargument — und es genügt.</span><span class="en-t block">Every engagement is handled by people who carry responsibility for GenAI systems in regulated Swiss enterprises today. That is our only sales pitch — and it suffices.</span></p>
+    </div>
+
+    <div class="member glass">
+      <div>
+        <h3>Dr. Sascha Jecklin</h3>
+        <span class="role"><span class="de-t">Mitgründer · Dr. sc. Data Science</span><span class="en-t">Co-founder · PhD Data Science</span></span>
+      </div>
+      <p><span class="de-t">Sascha leitet das GenAI-Team eines führenden Schweizer Versicherers und verantwortet dort den Weg von der Idee bis zum produktiven System — inklusive Governance, Plattformwahl und der Einführung agentischer Entwicklung in den Engineering-Teams. Promotion in Data Science; publiziert und referiert zu angewandtem Machine Learning.</span><span class="en-t block">Sascha leads the GenAI team of a leading Swiss insurer, owning the path from idea to production system — including governance, platform selection and the introduction of agentic development across engineering teams. PhD in data science; publishes and speaks on applied machine learning.</span></p>
+    </div>
+
+    <div class="member glass">
+      <div>
+        <h3>[Name Mitgründer:in 2]</h3>
+        <span class="role">[Rolle · Titel]</span>
+      </div>
+      <p><span class="de-t">[Kurzprofil: aktuelle Rolle und Unternehmen, Verantwortung, Spezialgebiet — z.B. RAG-Plattformen, Cloud-Architektur auf Azure/GCP/AWS, Security. Zwei bis drei Sätze, konkret, ohne Superlative.]</span><span class="en-t block">[Short bio: current role and company, responsibility, specialty — e.g. RAG platforms, cloud architecture on Azure/GCP/AWS, security. Two or three sentences, concrete, no superlatives.]</span></p>
+    </div>
+
+    <div class="member glass">
+      <div>
+        <h3>[Name Mitgründer:in 3]</h3>
+        <span class="role">[Rolle · Titel]</span>
+      </div>
+      <p><span class="de-t">[Kurzprofil: aktuelle Rolle und Unternehmen, Verantwortung, Spezialgebiet — z.B. Agents in Produktion, MLOps, Monitoring & Evaluation. Zwei bis drei Sätze.]</span><span class="en-t block">[Short bio: current role and company, responsibility, specialty — e.g. agents in production, MLOps, monitoring & evaluation. Two or three sentences.]</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="ws-cta-panel glass">
+      <span class="mono mono-a"><span class="de-t">Nächste Gelegenheit</span><span class="en-t">Next opportunity</span></span>
+      <h2 style="margin-top:16px"><span class="de-t">Ein Tag, der Ihrem Unternehmen ein Jahr Umwege erspart.</span><span class="en-t block">One day that saves your organisation a year of detours.</span></h2>
+      <p><span class="de-t">Unser Executive Workshop «Enterprise GenAI in der Praxis» kondensiert alles Obenstehende in einen Tag: Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security, Make-or-Buy. Maximal 16 Teilnehmende, damit am Ende Ihr Fahrplan steht — nicht unserer.</span><span class="en-t block">Our executive workshop "Enterprise GenAI in Practice" condenses everything above into one day: agents, RAG, governance, cloud choice, Swiss hosting, security, make-or-buy. A maximum of 16 participants, so that by the end the roadmap on the wall is yours — not ours.</span></p>
+      <div class="btn-row">
+        <a class="btn btn-grad" href="workshop.html"><span class="de-t">Workshop ansehen</span><span class="en-t">View the workshop</span></a>
+        <a class="btn btn-glass" href="mailto:hello@euler-lab.ch?subject=Inhouse%20Workshop"><span class="de-t">Inhouse anfragen</span><span class="en-t">Request in-house</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono mono-a">§ 6 — FAQ</span>
+      <h2 style="margin-top:16px"><span class="de-t">Die ehrlichen Antworten vorab.</span><span class="en-t block">The honest answers, up front.</span></h2>
+    </div>
+
+    <details>
+      <summary><span class="de-t">Ihr arbeitet alle noch operativ. Habt ihr überhaupt Kapazität?</span><span class="en-t">You all still work in operational roles. Do you even have capacity?</span></summary>
+      <div class="a"><span class="de-t">Ja — weil wir sie bewusst begrenzen. Wir nehmen parallel nur wenige Mandate an und sagen lieber ab, als zu verwässern. Dass wir operativ tätig bleiben, ist kein Nebeneffekt, sondern der Kern des Angebots: Sie bekommen Antworten von Leuten, die das Problem diese Woche selbst hatten, nicht vor drei Jahren.</span><span class="en-t block">Yes — because we deliberately cap it. We take on only a few engagements in parallel and would rather decline than dilute. That we remain operational is not a side effect but the core of the offering: you get answers from people who had your problem this week, not three years ago.</span></div>
+    </details>
+    <details>
+      <summary><span class="de-t">Seid ihr an einen Cloud-Anbieter oder Hersteller gebunden?</span><span class="en-t">Are you tied to a cloud provider or vendor?</span></summary>
+      <div class="a"><span class="de-t">Nein. Wir haben auf Azure, GCP und AWS gebaut und empfehlen, was zu Ihrer Ausgangslage passt — inklusive der Option, bei Ihrem bestehenden Anbieter zu bleiben. Wir erhalten keine Provisionen oder Kickbacks von Herstellern. Wenn sich das je ändern sollte, steht es in unseren Offerten.</span><span class="en-t block">No. We have built on Azure, GCP and AWS and recommend what fits your situation — including the option of staying with your current provider. We receive no commissions or kickbacks from vendors. Should that ever change, it will say so in our proposals.</span></div>
+    </details>
+    <details>
+      <summary><span class="de-t">Wie geht ihr mit Interessenkonflikten zu euren Arbeitgebern um?</span><span class="en-t">How do you handle conflicts of interest with your employers?</span></summary>
+      <div class="a"><span class="de-t">Strikt. Wir beraten keine direkten Wettbewerber unserer Arbeitgeber in deren Kerngeschäft, verwenden keine vertraulichen Informationen und legen mögliche Konflikte vor Mandatsbeginn offen. Was wir teilen, ist Methodenwissen und Erfahrung — keine Interna.</span><span class="en-t block">Strictly. We do not advise direct competitors of our employers in their core business, we use no confidential information, and we disclose potential conflicts before any engagement begins. What we share is methodology and experience — not internals.</span></div>
+    </details>
+    <details>
+      <summary><span class="de-t">Macht ihr auch Umsetzung — oder nur Konzepte?</span><span class="en-t">Do you also implement — or only write concepts?</span></summary>
+      <div class="a"><span class="de-t">Beides, mit klarer Präferenz: Wir glauben nicht an Konzepte, die andere umsetzen sollen. In Enablement-Programmen arbeiten wir hands-on mit Ihren Teams an Ihrem System. Für reine Body-Leasing-Anfragen («drei Entwickler für sechs Monate») sind wir die falsche Adresse.</span><span class="en-t block">Both, with a clear preference: we don't believe in concepts that others are supposed to implement. In enablement programmes we work hands-on with your teams on your system. For pure body-leasing requests ("three developers for six months") we are the wrong address.</span></div>
+    </details>
+    <details>
+      <summary><span class="de-t">Für wen seid ihr nicht die Richtigen?</span><span class="en-t">Who are you not right for?</span></summary>
+      <div class="a"><span class="de-t">Wenn Sie ein Logo für die nächste Strategie-Folie suchen, eine Armee von Beratern für ein Grossprogramm brauchen oder GenAI primär als Kommunikationsthema verstehen — dann gibt es bessere Adressen. Wir sind am stärksten, wenn etwas Konkretes in Produktion soll und die Organisation dafür fit werden muss.</span><span class="en-t block">If you are looking for a logo for the next strategy slide, need an army of consultants for a mega-programme, or see GenAI primarily as a communications topic — there are better addresses. We are strongest when something concrete needs to reach production and the organisation has to get fit for it.</span></div>
+    </details>
+  </div>
+</section>
+
+<section class="contact" id="kontakt" style="background:var(--bg-2)">
+  <div class="wrap">
+    <span class="mono mono-a"><span class="de-t">§ 7 — Kontakt</span><span class="en-t">§ 7 — Contact</span></span>
+    <h2 style="margin-top:16px"><span class="de-t">Bringen Sie Ihre schwierigste <span class="grad-text">GenAI-Frage</span> mit.</span><span class="en-t block">Bring your hardest <span class="grad-text">GenAI question</span>.</span></h2>
+    <p class="body-l"><span class="de-t">Dreissig Minuten, unverbindlich, ohne Folien. Wenn wir nicht helfen können, sagen wir es Ihnen in den ersten zehn.</span><span class="en-t block">Thirty minutes, no obligation, no slides. If we can't help, we will tell you within the first ten.</span></p>
+    <a class="btn btn-grad" href="mailto:hello@euler-lab.ch?subject=Erstgespr%C3%A4ch%20euler-lab"><span class="de-t">Erstgespräch vereinbaren</span><span class="en-t">Book an intro call</span></a>
+    <div class="email">hello@euler-lab.ch · Zürich</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>euler-lab</h4>
+        <p class="foot-legal">
+          <span class="de-t">euler-lab ist eine unabhängige Beratung für generative KI im Unternehmenseinsatz mit Sitz in Zürich. Wir erbringen Beratungs-, Enablement- und Schulungsleistungen; wir sind kein Software-Hersteller und keine Rechtsberatung. Aussagen zu regulatorischen Themen geben Erfahrungswerte wieder und ersetzen keine rechtliche Prüfung im Einzelfall. Benannt nach Leonhard Euler, Basel 1707 — dem Beweis, dass Schweizer Gründlichkeit und radikale Innovation kein Widerspruch sind.</span>
+          <span class="en-t block">euler-lab is an independent advisory firm for generative AI in the enterprise, based in Zurich. We provide advisory, enablement and training services; we are not a software vendor and not a law firm. Statements on regulatory topics reflect practical experience and do not replace legal review of individual cases. Named after Leonhard Euler, Basel 1707 — proof that Swiss rigour and radical innovation are not a contradiction.</span>
+        </p>
+      </div>
+      <div>
+        <h4><span class="de-t">Navigation</span><span class="en-t">Navigation</span></h4>
+        <a href="#leistungen"><span class="de-t">Leistungen</span><span class="en-t">Services</span></a>
+        <a href="#standpunkte"><span class="de-t">Standpunkte</span><span class="en-t">Positions</span></a>
+        <a href="#team">Team</a>
+        <a href="workshop.html">Executive Workshop</a>
+      </div>
+      <div>
+        <h4><span class="de-t">Kontakt</span><span class="en-t">Contact</span></h4>
+        <a href="mailto:hello@euler-lab.ch">hello@euler-lab.ch</a>
+        <a href="#kontakt"><span class="de-t">Erstgespräch</span><span class="en-t">Intro call</span></a>
+        <a href="#" aria-disabled="true">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© MMXXVI euler-lab GmbH <span class="de-t">(in Gründung)</span><span class="en-t">(in formation)</span> · Zürich</span>
+      <span>e ≈ 2.71828</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://euler-lab.ch/#organization",
+  "name": "EULER LAB GmbH",
+  "alternateName": "euler-lab",
+  "url": "https://euler-lab.ch/",
+  "logo": "https://euler-lab.ch/euler-lab-logo.svg",
+  "image": "https://euler-lab.ch/og-image.png",
+  "email": "hello@euler-lab.ch",
+  "description": "GenAI-Beratung für Schweizer Unternehmen: Coding-Agents, RAG-Systeme, AI-Governance und Compliance, Cloud-Wahl (Azure, GCP, AWS) und Hosting in der Schweiz. Erfahrung aus GenAI-Teams regulierter Grossunternehmen.",
+  "address": {"@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH"},
+  "areaServed": {"@type": "Country", "name": "Switzerland"},
+  "knowsAbout": ["Generative AI", "Retrieval-Augmented Generation", "Coding Agents", "AI Governance", "AI Compliance", "Prompt Injection", "LLM Monitoring", "Cloud Architecture", "Swiss Data Residency"],
+  "founder": [{"@type": "Person", "name": "Dr. Sascha Jecklin", "jobTitle": "Co-Founder"}],
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Ihr arbeitet alle noch operativ. Habt ihr überhaupt Kapazität?", "acceptedAnswer": {"@type": "Answer", "text": "Ja — weil wir sie bewusst begrenzen. Wir nehmen parallel nur wenige Mandate an. Dass wir operativ tätig bleiben, ist der Kern des Angebots: Antworten von Leuten, die das Problem diese Woche selbst hatten."}},
+    {"@type": "Question", "name": "Seid ihr an einen Cloud-Anbieter oder Hersteller gebunden?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Wir haben auf Azure, GCP und AWS gebaut und empfehlen, was zur Ausgangslage passt. Wir erhalten keine Provisionen oder Kickbacks von Herstellern."}},
+    {"@type": "Question", "name": "Wie geht ihr mit Interessenkonflikten zu euren Arbeitgebern um?", "acceptedAnswer": {"@type": "Answer", "text": "Strikt: keine Beratung direkter Wettbewerber im Kerngeschäft, keine vertraulichen Informationen, Offenlegung möglicher Konflikte vor Mandatsbeginn."}},
+    {"@type": "Question", "name": "Macht ihr auch Umsetzung — oder nur Konzepte?", "acceptedAnswer": {"@type": "Answer", "text": "Beides, mit klarer Präferenz für Hands-on: In Enablement-Programmen arbeiten wir direkt mit den Teams am eigenen System. Reines Body-Leasing bieten wir nicht an."}},
+    {"@type": "Question", "name": "Für wen seid ihr nicht die Richtigen?", "acceptedAnswer": {"@type": "Answer", "text": "Für Strategie-Folien ohne Umsetzungsabsicht oder Grossprogramme mit Berater-Armeen. Wir sind am stärksten, wenn etwas Konkretes in Produktion soll."}}
+  ]
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+function toggleLang(){
+  document.body.classList.toggle('en');
+  var en = document.body.classList.contains('en');
+  document.getElementById('langBtn').textContent = en ? 'DE' : 'EN';
+  document.documentElement.lang = en ? 'en' : 'de';
+}
+
+/* ——— Three.js: floating connected-node network (Euler graph), white mode ——— */
+(function(){
+  if (typeof THREE === 'undefined') return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var holder = document.getElementById('bg3d');
+  var W = holder.clientWidth, H = holder.clientHeight;
+  var mobile = window.innerWidth < 880;
+  var COUNT = mobile ? 75 : 150;
+  var RANGE = {x: 170, y: 95, z: 70};
+  var LINK_DIST = mobile ? 32 : 29;
+
+  var scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xF7F9FE, 75, 185);
+  var camera = new THREE.PerspectiveCamera(60, W/H, 1, 300);
+  camera.position.z = 85;
+
+  var renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  holder.appendChild(renderer.domElement);
+
+  // round sprite texture
+  function dotTexture(hex){
+    var c = document.createElement('canvas'); c.width = c.height = 64;
+    var g = c.getContext('2d');
+    var grd = g.createRadialGradient(32,32,0,32,32,30);
+    grd.addColorStop(0, hex); grd.addColorStop(0.55, hex); grd.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = grd; g.beginPath(); g.arc(32,32,30,0,Math.PI*2); g.fill();
+    var t = new THREE.CanvasTexture(c); return t;
+  }
+
+  // particles
+  var pos = new Float32Array(COUNT*3), vel = [];
+  for (var i=0;i<COUNT;i++){
+    pos[i*3]   = (Math.random()-0.5)*RANGE.x*2;
+    pos[i*3+1] = (Math.random()-0.5)*RANGE.y*2;
+    pos[i*3+2] = (Math.random()-0.5)*RANGE.z*2;
+    vel.push(new THREE.Vector3((Math.random()-0.5)*0.05,(Math.random()-0.5)*0.05,(Math.random()-0.5)*0.05));
+  }
+  var pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  var pMat = new THREE.PointsMaterial({
+    size: mobile ? 4.0 : 3.5, map: dotTexture('rgba(9,129,181,0.95)'),
+    transparent:true, depthWrite:false, opacity:0.95, sizeAttenuation:true
+  });
+  scene.add(new THREE.Points(pGeo,pMat));
+
+  // a few teal accent nodes
+  var ACC = Math.floor(COUNT*0.18);
+  var apos = new Float32Array(ACC*3), avel=[];
+  for (var j=0;j<ACC;j++){
+    apos[j*3]=(Math.random()-0.5)*RANGE.x*2; apos[j*3+1]=(Math.random()-0.5)*RANGE.y*2; apos[j*3+2]=(Math.random()-0.5)*RANGE.z*2;
+    avel.push(new THREE.Vector3((Math.random()-0.5)*0.06,(Math.random()-0.5)*0.06,(Math.random()-0.5)*0.06));
+  }
+  var aGeo = new THREE.BufferGeometry();
+  aGeo.setAttribute('position', new THREE.BufferAttribute(apos,3));
+  var aMat = new THREE.PointsMaterial({size:4.8, map:dotTexture('rgba(24,203,246,0.95)'), transparent:true, depthWrite:false, opacity:0.95, sizeAttenuation:true});
+  scene.add(new THREE.Points(aGeo,aMat));
+
+  // connection lines (preallocated)
+  var MAXL = COUNT*8;
+  var lpos = new Float32Array(MAXL*6);
+  var lGeo = new THREE.BufferGeometry();
+  lGeo.setAttribute('position', new THREE.BufferAttribute(lpos,3));
+  var lMat = new THREE.LineBasicMaterial({color:0x0981B5, transparent:true, opacity:0.24});
+  var lines = new THREE.LineSegments(lGeo,lMat);
+  scene.add(lines);
+
+  var mouseX=0, mouseY=0;
+  if (!mobile) document.addEventListener('mousemove', function(e){
+    mouseX = (e.clientX/window.innerWidth - 0.5);
+    mouseY = (e.clientY/window.innerHeight - 0.5);
+  });
+
+  var running = true;
+  document.addEventListener('visibilitychange', function(){ running = !document.hidden; });
+
+  function step(){
+    requestAnimationFrame(step);
+    if (!running) return;
+    // move
+    for (var i=0;i<COUNT;i++){
+      pos[i*3]+=vel[i].x; pos[i*3+1]+=vel[i].y; pos[i*3+2]+=vel[i].z;
+      if (Math.abs(pos[i*3])>RANGE.x) vel[i].x*=-1;
+      if (Math.abs(pos[i*3+1])>RANGE.y) vel[i].y*=-1;
+      if (Math.abs(pos[i*3+2])>RANGE.z) vel[i].z*=-1;
+    }
+    for (var j=0;j<ACC;j++){
+      apos[j*3]+=avel[j].x; apos[j*3+1]+=avel[j].y; apos[j*3+2]+=avel[j].z;
+      if (Math.abs(apos[j*3])>RANGE.x) avel[j].x*=-1;
+      if (Math.abs(apos[j*3+1])>RANGE.y) avel[j].y*=-1;
+      if (Math.abs(apos[j*3+2])>RANGE.z) avel[j].z*=-1;
+    }
+    pGeo.attributes.position.needsUpdate = true;
+    aGeo.attributes.position.needsUpdate = true;
+    // connect
+    var n=0;
+    for (var a=0;a<COUNT && n<MAXL;a++){
+      for (var b=a+1;b<COUNT && n<MAXL;b++){
+        var dx=pos[a*3]-pos[b*3], dy=pos[a*3+1]-pos[b*3+1], dz=pos[a*3+2]-pos[b*3+2];
+        if (dx*dx+dy*dy+dz*dz < LINK_DIST*LINK_DIST){
+          lpos[n*6]=pos[a*3]; lpos[n*6+1]=pos[a*3+1]; lpos[n*6+2]=pos[a*3+2];
+          lpos[n*6+3]=pos[b*3]; lpos[n*6+4]=pos[b*3+1]; lpos[n*6+5]=pos[b*3+2];
+          n++;
+        }
+      }
+    }
+    lGeo.setDrawRange(0, n*2);
+    lGeo.attributes.position.needsUpdate = true;
+    // parallax
+    camera.position.x += (mouseX*14 - camera.position.x)*0.04;
+    camera.position.y += (-mouseY*9 - camera.position.y)*0.04;
+    camera.lookAt(scene.position);
+    scene.rotation.y += 0.0006;
+    renderer.render(scene,camera);
+  }
+
+  if (reduced){
+    // static single frame
+    renderer.render(scene,camera);
+  } else {
+    step();
+  }
+
+  window.addEventListener('resize', function(){
+    W = holder.clientWidth; H = holder.clientHeight;
+    camera.aspect = W/H; camera.updateProjectionMatrix();
+    renderer.setSize(W,H);
+  });
+})();
+</script>
+</body>
+</html>
