@@ -9,7 +9,6 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="EULER LAB GmbH">
 <link rel="canonical" href="https://euler-lab.ch/">
-<link rel="icon" href="euler-mark.svg" type="image/svg+xml">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EULER LAB">
@@ -26,6 +25,8 @@
 <meta name="twitter:title" content="EULER LAB — GenAI Beratung Schweiz">
 <meta name="twitter:description" content="Agents, RAG, Governance & Swiss Hosting — Enterprise-GenAI-Beratung aus der Praxis, Zürich.">
 <meta name="twitter:image" content="https://euler-lab.ch/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -57,11 +58,10 @@
   .body-l{font-size:clamp(17px,1.5vw,20px);line-height:1.7;color:var(--ink-soft)}
   p+p{margin-top:1.2em}
 
-  @keyframes fluid-grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
   .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-size:15.5px;font-weight:600;text-decoration:none;padding:15px 30px;border-radius:12px;transition:transform .18s,box-shadow .18s;cursor:pointer;border:none}
   .btn:hover{transform:translateY(-2px)}
-  .btn-grad{background:linear-gradient(135deg,var(--a1),var(--a2),var(--a1));background-size:300% 300%;color:#fff;box-shadow:0 10px 30px rgba(9,129,181,.28)}
-  .btn-grad:hover{box-shadow:0 16px 40px rgba(9,129,181,.36);animation:fluid-grad 4s ease-in-out infinite}
+  .btn-grad{background:var(--grad);color:#fff;box-shadow:0 10px 30px rgba(9,129,181,.28)}
+  .btn-grad:hover{box-shadow:0 16px 40px rgba(9,129,181,.36)}
   .btn-glass{background:var(--glass-strong);color:var(--ink);border:1px solid var(--line);backdrop-filter:blur(12px)}
   .btn-glass:hover{box-shadow:var(--shadow)}
 
@@ -106,7 +106,7 @@
   /* Services */
   .services{background:var(--bg-2)}
   .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .svc{padding:38px 36px;position:relative;overflow:hidden;border-top:none}
+  .svc{padding:38px 36px;position:relative;overflow:hidden}
   .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);border-radius:var(--r) var(--r) 0 0;box-shadow:0 2px 14px rgba(9,129,181,.35)}
   .svc .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--a1);display:block;margin-bottom:18px}
   .svc h3{font-size:clamp(20px,2vw,26px);font-weight:600;margin-bottom:14px}
@@ -184,7 +184,6 @@
   }
   @media (prefers-reduced-motion: reduce){
     .btn{transition:none}
-    .btn-grad:hover{animation:none}
   }
 </style>
 </head>
@@ -193,7 +192,7 @@
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="#">
-      <svg aria-hidden="true" style="display:block" width="38" height="38" viewBox="110 0 590 590" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+      <svg aria-hidden="true" style="display:block" width="38" height="38" viewBox="115.5 -6.0 574.5 555.5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1,-806.849,-1999.23)">
         <g transform="matrix(1,0,0,1,0,517)">
             <g transform="matrix(1,0,0,1,0,-10.6606)">
