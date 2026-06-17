@@ -32,7 +32,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F7F9FE; --bg-2:#EFF3FB; --ink:#0D1220; --ink-soft:#3A4358; --muted:#69748C;
+    --bg:#F7F9FE; --bg-2:#EFF3FB; --ink:#0D1220; --ink-soft:#3A4358; --muted:#566074;
     --a1:#0981B5; --a2:#18CBF6; --grad:linear-gradient(100deg,var(--a1),var(--a2));
     --line:rgba(13,18,32,.10); --glass:rgba(255,255,255,.62); --glass-strong:rgba(255,255,255,.82);
     --shadow:0 18px 50px rgba(13,18,32,.08); --glow:0 0 0 1px rgba(9,129,181,.14), 0 16px 48px rgba(9,129,181,.12);
@@ -109,7 +109,7 @@
   .svc{padding:38px 36px;position:relative;overflow:hidden}
   .svc.glass{outline:none;border:none}
   .svc::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);box-shadow:0 2px 14px rgba(9,129,181,.35)}
-  .svc .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--a1);display:block;margin-bottom:18px}
+  .svc .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:#0A6480;display:block;margin-bottom:18px}
   .svc h3{font-size:clamp(20px,2vw,26px);font-weight:600;margin-bottom:14px}
   .svc p{font-size:15.5px;color:var(--ink-soft)}
   .svc ul{list-style:none;margin-top:20px;border-top:1px solid var(--line)}
@@ -166,7 +166,7 @@
   /* Footer */
   footer{background:var(--bg-2);border-top:1px solid var(--line);padding:64px 0 40px;font-size:14px;color:var(--muted)}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px}
-  .foot-grid h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px;font-weight:500}
+  .foot-grid .foot-h{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px;font-weight:500}
   .foot-grid a{display:block;text-decoration:none;padding:4px 0;color:var(--muted)}
   .foot-grid a:hover{color:var(--a1)}
   .foot-legal{font-size:13px;line-height:1.7;max-width:520px}
@@ -224,6 +224,7 @@
     </div>
   </div>
 </nav>
+<main>
 
 <header class="hero">
   <div id="bg3d"></div>
@@ -234,8 +235,8 @@
       <span class="en-t block">Every company has a GenAI strategy. <span class="grad-text">Few have systems in production.</span></span>
     </h1>
     <p class="hero-sub">
-      <span class="de-t">euler-lab berät Unternehmen, die Generative KI produktiv einsetzen wollen. Wir haben Agents, RAG-Systeme und Governance-Frameworks in regulierten Schweizer Grossunternehmen aufgebaut. Diese Erfahrung bringen wir dorthin, wo sie gerade fehlt: in Ihr Haus.</span>
-      <span class="en-t block">euler-lab advises organisations that want to put generative AI into production. We built agents, RAG systems and governance frameworks inside regulated Swiss enterprises. We bring that experience to where it is missing: your organisation.</span>
+      <span class="de-t">euler-lab ist eine Beratung für Unternehmen, die generative KI nicht evaluieren, sondern einsetzen wollen. Wir haben Agents, RAG-Systeme und Governance-Frameworks in regulierten Schweizer Grossunternehmen aufgebaut. Diese Erfahrung bringen wir dorthin, wo sie gerade fehlt: in Ihr Haus.</span>
+      <span class="en-t block">euler-lab is a consultancy for organisations that want to deploy generative AI, not evaluate it indefinitely. We built agents, RAG systems and governance frameworks inside regulated Swiss enterprises. We bring that experience to where it is missing: your organisation.</span>
     </p>
     <div class="hero-ctas">
       <a class="btn btn-grad" href="#kontakt"><span class="de-t">Erstgespräch vereinbaren</span><span class="en-t">Book an intro call</span></a>
@@ -257,8 +258,8 @@
         <span class="en-t block">In a regulated enterprise, the distance between a GenAI pilot and a production system is not a sprint. In between sit data residency, risk sign-off, cloud contracts, security reviews, operating models — and an organisation that has to come along.</span>
       </p>
       <p>
-        <span class="de-t">Wir kennen diese Strecke, weil wir sie selbst gegangen sind. In unserer Arbeit in grossen Schweizer Versicherern und Banken haben wir mitgestaltet, wie Enterprise-GenAI tatsächlich funktioniert: wie Entwicklungsteams mit Coding-Agents arbeiten, wie RAG-Systeme an echten Unternehmensdaten bestehen, welche Governance Audits standhält, was Azure, GCP und AWS für GenAI wirklich taugen, wie man in der Schweiz hostet, wie man LLM-Systeme überwacht und gegen Prompt Injection absichert, und wann man kauft statt baut.</span>
-        <span class="en-t block">We know this road because we have walked it ourselves. In our work inside major Swiss insurers and banks, we helped shape how enterprise GenAI actually works: how engineering teams work with coding agents, how RAG systems hold up against real corporate data, which governance survives audits, what Azure, GCP and AWS are actually worth for GenAI, how to host in Switzerland, how to monitor LLM systems and harden them against prompt injection, and when to buy instead of build.</span>
+        <span class="de-t">Wir kennen diese Strecke, weil wir sie selbst gegangen sind. Im letzten Jahr haben wir in Unternehmen wie grossen Schweizer Versicherern und Banken untersucht und mitgestaltet, wie Enterprise-GenAI tatsächlich funktioniert: wie Entwicklungsteams mit Coding-Agents arbeiten, wie RAG-Systeme an echten Unternehmensdaten bestehen, welche Governance Audits standhält, was Azure, GCP und AWS für GenAI wirklich taugen, wie man in der Schweiz hostet, wie man LLM-Systeme überwacht und gegen Prompt Injection absichert, und wann man kauft statt baut.</span>
+        <span class="en-t block">We know this road because we have walked it ourselves. Over the past year, inside organisations such as major Swiss insurers and banks, we examined and shaped how enterprise GenAI actually works: how engineering teams work with coding agents, how RAG systems hold up against real corporate data, which governance survives audits, what Azure, GCP and AWS are actually worth for GenAI, how to host in Switzerland, how to monitor LLM systems and harden them against prompt injection, and when to buy instead of build.</span>
       </p>
       <p>
         <span class="de-t"><strong>Das ist kein Beratungswissen aus zweiter Hand.</strong> Es ist operative Erfahrung aus Teams, die diese Systeme heute betreiben. Wir haben euler-lab gegründet, weil sehr viele Unternehmen genau diese Fragen gerade jetzt beantworten müssen, und es keinen Grund gibt, dass jedes von ihnen dieselben teuren Umwege geht.</span>
@@ -324,7 +325,7 @@
     <div class="sec-head">
       <span class="mono mono-a"><span class="de-t">§ 3 — Standpunkte</span><span class="en-t">§ 3 — Positions</span></span>
       <h2 style="margin-top:16px"><span class="de-t">Was wir gelernt haben und vertreten.</span><span class="en-t block">What we have learned and stand for.</span></h2>
-      <p class="body-l"><span class="de-t">Beratung ohne Haltung ist Moderation. Vier Überzeugungen aus konkreter Enterprise-GenAI-Praxis. Messen Sie uns daran.</span><span class="en-t block">Advisory without conviction is facilitation. Four beliefs drawn from hands-on enterprise GenAI practice. Hold us to them.</span></p>
+      <p class="body-l"><span class="de-t">Beratung ohne Haltung ist Moderation. Vier Überzeugungen aus einem Jahr Enterprise-GenAI-Praxis. Messen Sie uns daran.</span><span class="en-t block">Advisory without conviction is facilitation. Four beliefs from a year of enterprise GenAI practice — hold us to them.</span></p>
     </div>
     <div class="pos-grid">
       <div class="pos">
@@ -469,25 +470,26 @@
   </div>
 </section>
 
+</main>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h4>euler-lab</h4>
+        <p class="foot-h">euler-lab</p>
         <p class="foot-legal">
           <span class="de-t">euler-lab ist eine unabhängige Beratung für generative KI im Unternehmenseinsatz mit Sitz in Zürich. Wir erbringen Beratungs-, Enablement- und Schulungsleistungen; wir sind kein Software-Hersteller und keine Rechtsberatung. Aussagen zu regulatorischen Themen geben Erfahrungswerte wieder und ersetzen keine rechtliche Prüfung im Einzelfall. Benannt nach Leonhard Euler, Basel 1707 — dem Beweis, dass Schweizer Gründlichkeit und radikale Innovation kein Widerspruch sind.</span>
           <span class="en-t block">euler-lab is an independent advisory firm for generative AI in the enterprise, based in Zurich. We provide advisory, enablement and training services; we are not a software vendor and not a law firm. Statements on regulatory topics reflect practical experience and do not replace legal review of individual cases. Named after Leonhard Euler, Basel 1707 — proof that Swiss rigour and radical innovation are not a contradiction.</span>
         </p>
       </div>
       <div>
-        <h4><span class="de-t">Navigation</span><span class="en-t">Navigation</span></h4>
+        <p class="foot-h"><span class="de-t">Navigation</span><span class="en-t">Navigation</span></p>
         <a href="#leistungen"><span class="de-t">Leistungen</span><span class="en-t">Services</span></a>
         <a href="#standpunkte"><span class="de-t">Standpunkte</span><span class="en-t">Positions</span></a>
         <a href="#team">Team</a>
         <a href="workshop.html">Executive Workshop</a>
       </div>
       <div>
-        <h4><span class="de-t">Kontakt</span><span class="en-t">Contact</span></h4>
+        <p class="foot-h"><span class="de-t">Kontakt</span><span class="en-t">Contact</span></p>
         <a href="mailto:hello@euler-lab.ch">hello@euler-lab.ch</a>
         <a href="#kontakt"><span class="de-t">Erstgespräch</span><span class="en-t">Intro call</span></a>
         <a href="#" aria-disabled="true">LinkedIn ↗</a>
