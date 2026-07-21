@@ -12,8 +12,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EULER LAB">
-<meta property="og:title" content="Executive Workshop: Enterprise GenAI in der Praxis — Zürich">
-<meta property="og:description" content="Ein Tag, der Ihrem Unternehmen ein Jahr Umwege erspart: Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security, Make-or-Buy. Max. 16 Teilnehmende.">
+<meta property="og:title" content="Executive Workshop: Enterprise GenAI in der Praxis, Zürich">
+<meta property="og:description" content="Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security, Make-or-Buy. Max. 16 Teilnehmende.">
 <meta property="og:url" content="https://euler-lab.ch/workshop.html">
 <meta property="og:image" content="https://euler-lab.ch/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Executive Workshop: Enterprise GenAI in der Praxis — Zürich">
+<meta name="twitter:title" content="Executive Workshop: Enterprise GenAI in der Praxis, Zürich">
 <meta name="twitter:description" content="Agents, RAG, Governance, Swiss Hosting & Make-or-Buy in einem Tag. Max. 16 Teilnehmende.">
 <meta name="twitter:image" content="https://euler-lab.ch/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -131,6 +131,7 @@
   .pricing-panel::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(24,203,246,.13),transparent 65%);bottom:-180px;left:-80px;pointer-events:none}
   .price-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start;position:relative;z-index:1}
   .price-num{font-family:var(--disp);font-size:clamp(44px,5.4vw,68px);font-weight:700;line-height:1;letter-spacing:-.02em}
+  .price-num.pending{font-size:clamp(28px,3.2vw,40px);line-height:1.15;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .price-num small{font-size:16px;font-family:var(--sans);font-weight:500;color:var(--muted)}
   .price-note{margin-top:16px;color:var(--ink-soft);font-size:15px;max-width:440px}
   .incl{list-style:none}
@@ -203,14 +204,14 @@
 <header class="hero">
   <div id="bg3d"></div>
   <div class="wrap hero-content">
-    <span class="hero-badge"><span class="dot"></span><span class="de-t">Executive Workshop · Zürich · [Datum TBD]</span><span class="en-t">Executive Workshop · Zurich · [Date TBD]</span></span>
+    <span class="hero-badge"><span class="dot"></span><span class="de-t">Executive Workshop · Zürich · Inhouse & öffentlich</span><span class="en-t">Executive Workshop · Zurich · in-house & public</span></span>
     <h1>
       <span class="de-t">Enterprise GenAI in der Praxis. <span class="grad-text">Ein Tag. Ihr Fahrplan.</span></span>
       <span class="en-t block">Enterprise GenAI in practice. <span class="grad-text">One day. Your roadmap.</span></span>
     </h1>
     <p class="hero-sub">
-      <span class="de-t">Ein Jahr operative Erfahrung aus GenAI-Teams regulierter Schweizer Unternehmen, kondensiert in einen Arbeitstag: Agents und Vibe Coding, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security und die Make-or-Buy-Frage. Sie gehen nicht mit Inspiration nach Hause, sondern mit einem Fahrplan.</span>
-      <span class="en-t block">A year of operational experience from GenAI teams inside regulated Swiss enterprises, condensed into one working day: agents and vibe coding, RAG, governance, cloud choice, Swiss hosting, security and the make-or-buy question. You won't leave with inspiration — you'll leave with a roadmap.</span>
+      <span class="de-t">Was wir beim Bau produktiver GenAI-Systeme in regulierten Schweizer Unternehmen gelernt haben, kondensiert in einen Arbeitstag: Agents und Vibe Coding, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security und die Make-or-Buy-Frage. Sie gehen nicht mit Inspiration nach Hause, sondern mit einem Fahrplan.</span>
+      <span class="en-t block">What we learned building production GenAI systems inside regulated Swiss enterprises, condensed into one working day: agents and vibe coding, RAG, governance, cloud choice, Swiss hosting, security and the make-or-buy question. You won't leave with inspiration, you'll leave with a roadmap.</span>
     </p>
     <div class="hero-ctas">
       <a class="btn btn-grad" href="#anmeldung"><span class="de-t">Platz anfragen</span><span class="en-t">Request a seat</span></a>
@@ -233,16 +234,16 @@
     </div>
     <div>
       <p class="lead">
-        <span class="de-t">Die meisten GenAI-Workshops erklären, was ein Large Language Model ist. Dieser hier setzt voraus, dass Sie das wissen — und beginnt dort, wo es schwierig wird.</span>
-        <span class="en-t block">Most GenAI workshops explain what a large language model is. This one assumes you know — and starts where it gets difficult.</span>
+        <span class="de-t">Die meisten GenAI-Workshops erklären, was ein Large Language Model ist. Dieser hier setzt voraus, dass Sie das wissen, und beginnt dort, wo es schwierig wird.</span>
+        <span class="en-t block">Most GenAI workshops explain what a large language model is. This one assumes you know, and starts where it gets difficult.</span>
       </p>
       <p>
-        <span class="de-t">Wir haben das letzte Jahr damit verbracht, GenAI in regulierten Schweizer Grossunternehmen produktiv zu machen: Coding-Agents in Engineering-Teams eingeführt, RAG-Systeme an echten Datenbeständen gebaut und evaluiert, Governance-Frameworks durch Risiko- und Security-Abnahmen getragen, Cloud-Verträge und Schweizer Hosting-Optionen verglichen, LLM-Systeme überwacht und gegen Prompt Injection gehärtet.</span>
-        <span class="en-t block">We spent the past year making GenAI productive inside regulated Swiss enterprises: introducing coding agents into engineering teams, building and evaluating RAG systems on real data estates, carrying governance frameworks through risk and security sign-offs, comparing cloud contracts and Swiss hosting options, monitoring LLM systems and hardening them against prompt injection.</span>
+        <span class="de-t">Wir haben GenAI in regulierten Schweizer Grossunternehmen produktiv gemacht: Coding-Agents in Engineering-Teams eingeführt, RAG-Systeme an echten Datenbeständen gebaut und evaluiert, Governance-Frameworks durch Risiko- und Security-Abnahmen getragen, Cloud-Verträge und Schweizer Hosting-Optionen verglichen, LLM-Systeme überwacht und gegen Prompt Injection gehärtet.</span>
+        <span class="en-t block">We have made GenAI productive inside regulated Swiss enterprises: introducing coding agents into engineering teams, building and evaluating RAG systems on real data estates, carrying governance frameworks through risk and security sign-offs, comparing cloud contracts and Swiss hosting options, monitoring LLM systems and hardening them against prompt injection.</span>
       </p>
       <p>
-        <span class="de-t"><strong>Diesen Erfahrungsschatz geben wir an einem Tag weiter</strong> — strukturiert, mit Entscheidungsrastern und Vorlagen, und am Nachmittag angewendet auf Ihre konkrete Ausgangslage. Sechzehn Plätze, damit es ein Arbeitstag wird und kein Vortrag.</span>
-        <span class="en-t block"><strong>We pass on this body of experience in a single day</strong> — structured, with decision matrices and templates, applied in the afternoon to your specific situation. Sixteen seats, so it remains a working day, not a lecture.</span>
+        <span class="de-t"><strong>Diesen Erfahrungsschatz geben wir an einem Tag weiter</strong>: strukturiert, mit Entscheidungsrastern und Vorlagen, am Nachmittag angewendet auf Ihre konkrete Ausgangslage. Sechzehn Plätze, damit es ein Arbeitstag wird und kein Vortrag.</span>
+        <span class="en-t block"><strong>We pass on this body of experience in a single day</strong>: structured, with decision matrices and templates, applied in the afternoon to your specific situation. Sixteen seats, so it remains a working day, not a lecture.</span>
       </p>
     </div>
   </div>
@@ -258,38 +259,38 @@
       <div class="mod glass">
         <span class="num">01 / AGENTS</span>
         <h3><span class="de-t">Agents & Vibe Coding</span><span class="en-t">Agents & Vibe Coding</span></h3>
-        <p><span class="de-t">Wie Entwicklungsteams heute mit Coding-Agents arbeiten — live gezeigt, nicht behauptet. Welche Workflows sich in der Praxis durchgesetzt haben, wie sich Code-Review und Qualitätssicherung verändern, was mit Junior-Rollen passiert und wie ein Rollout aussieht, der die Organisation mitnimmt statt überfordert.</span><span class="en-t block">How engineering teams work with coding agents today — demonstrated live, not asserted. Which workflows have prevailed in practice, how code review and quality assurance change, what happens to junior roles, and what a rollout looks like that brings the organisation along instead of overwhelming it.</span></p>
-        <p class="q"><span class="de-t">«Wie bringen wir 200 Entwickler:innen kontrolliert ins Agent-Zeitalter?»</span><span class="en-t">"How do we move 200 engineers into the agent era — in a controlled way?"</span></p>
+        <p><span class="de-t">Wie Entwicklungsteams heute mit Coding-Agents arbeiten, live gezeigt, nicht behauptet. Welche Workflows sich in der Praxis durchgesetzt haben, wie sich Code-Review und Qualitätssicherung verändern, was mit Junior-Rollen passiert und wie ein Rollout aussieht, der die Organisation mitnimmt statt überfordert.</span><span class="en-t block">How engineering teams work with coding agents today, demonstrated live, not asserted. Which workflows have prevailed in practice, how code review and quality assurance change, what happens to junior roles, and what a rollout looks like that brings the organisation along instead of overwhelming it.</span></p>
+        <p class="q"><span class="de-t">«Wie bringen wir 200 Entwickler:innen kontrolliert ins Agent-Zeitalter?»</span><span class="en-t">"How do we move 200 engineers into the agent era, in a controlled way?"</span></p>
       </div>
       <div class="mod glass">
         <span class="num">02 / RAG</span>
         <h3><span class="de-t">RAG an echten Daten</span><span class="en-t">RAG on Real Data</span></h3>
-        <p><span class="de-t">Warum RAG-Demos begeistern und RAG-Systeme enttäuschen — und wie man die Lücke schliesst. Architekturmuster, Berechtigungen, Dokumentqualität, Chunking-Entscheide und vor allem: Evaluation als Disziplin. Mit den Metriken und Pipelines, die wir selbst einsetzen.</span><span class="en-t block">Why RAG demos impress and RAG systems disappoint — and how to close the gap. Architecture patterns, permissions, document quality, chunking decisions and above all: evaluation as a discipline. With the metrics and pipelines we use ourselves.</span></p>
+        <p><span class="de-t">Warum RAG-Demos begeistern und RAG-Systeme enttäuschen, und wie man die Lücke schliesst. Architekturmuster, Berechtigungen, Dokumentqualität, Chunking-Entscheide und vor allem: Evaluation als Disziplin. Mit den Metriken und Pipelines, die wir selbst einsetzen.</span><span class="en-t block">Why RAG demos impress and RAG systems disappoint, and how to close the gap. Architecture patterns, permissions, document quality, chunking decisions and above all: evaluation as a discipline. With the metrics and pipelines we use ourselves.</span></p>
         <p class="q"><span class="de-t">«Woher wissen wir, ob unser System die Wahrheit sagt?»</span><span class="en-t">"How do we know whether our system is telling the truth?"</span></p>
       </div>
       <div class="mod glass">
         <span class="num">03 / GOVERNANCE</span>
         <h3><span class="de-t">Governance & Compliance</span><span class="en-t">Governance & Compliance</span></h3>
-        <p><span class="de-t">Welche AI-Governance Audits in Banken und Versicherungen tatsächlich standhält — und trotzdem schlank bleibt. Risiko-Klassifizierung von Use Cases, Freigabeprozesse, Dokumentationspflichten, Umgang mit Aufsicht und interner Revision. Mit Vorlagen, die Sie mitnehmen und anpassen.</span><span class="en-t block">Which AI governance actually survives audits in banks and insurers — while staying lean. Risk classification of use cases, approval processes, documentation duties, dealing with regulators and internal audit. With templates you take away and adapt.</span></p>
-        <p class="q"><span class="de-t">«Wer darf bei uns eigentlich Ja sagen — und zu was?»</span><span class="en-t">"Who in our organisation is actually allowed to say yes — and to what?"</span></p>
+        <p><span class="de-t">Welche AI-Governance Audits in Banken und Versicherungen tatsächlich standhält, und trotzdem schlank bleibt. Risiko-Klassifizierung von Use Cases, Freigabeprozesse, Dokumentationspflichten, Umgang mit Aufsicht und interner Revision. Mit Vorlagen, die Sie mitnehmen und anpassen.</span><span class="en-t block">Which AI governance actually survives audits in banks and insurers, while staying lean. Risk classification of use cases, approval processes, documentation duties, dealing with regulators and internal audit. With templates you take away and adapt.</span></p>
+        <p class="q"><span class="de-t">«Wer darf bei uns eigentlich Ja sagen, und zu was?»</span><span class="en-t">"Who in our organisation is actually allowed to say yes, and to what?"</span></p>
       </div>
       <div class="mod glass">
         <span class="num">04 / CLOUD & HOSTING</span>
         <h3><span class="de-t">Cloud-Wahl & Swiss Hosting</span><span class="en-t">Cloud Choice & Swiss Hosting</span></h3>
-        <p><span class="de-t">Azure, GCP und AWS für GenAI im direkten Vergleich: Modellverfügbarkeit, Datenresidenz, Schweizer Regionen, Vertragsklauseln, Kostenfallen. Dazu die Souveränitätsfrage ohne Folklore: Was verlangt die Regulierung wirklich, was ist Risikoappetit, was ist Symbolpolitik — und wann lohnt sich On-Prem-Inferenz.</span><span class="en-t block">Azure, GCP and AWS for GenAI in direct comparison: model availability, data residency, Swiss regions, contract clauses, cost traps. Plus the sovereignty question without folklore: what regulation actually demands, what is risk appetite, what is symbolism — and when on-prem inference pays off.</span></p>
-        <p class="q"><span class="de-t">«Müssen wir in der Schweiz hosten — oder wollen wir nur?»</span><span class="en-t">"Do we have to host in Switzerland — or do we just want to?"</span></p>
+        <p><span class="de-t">Azure, GCP und AWS für GenAI im direkten Vergleich: Modellverfügbarkeit, Datenresidenz, Schweizer Regionen, Vertragsklauseln, Kostenfallen. Dazu die Souveränitätsfrage ohne Folklore: Was verlangt die Regulierung wirklich, was ist Risikoappetit, was ist Symbolpolitik, und wann lohnt sich On-Prem-Inferenz.</span><span class="en-t block">Azure, GCP and AWS for GenAI in direct comparison: model availability, data residency, Swiss regions, contract clauses, cost traps. Plus the sovereignty question without folklore: what regulation actually demands, what is risk appetite, what is symbolism, and when on-prem inference pays off.</span></p>
+        <p class="q"><span class="de-t">«Müssen wir in der Schweiz hosten, oder wollen wir nur?»</span><span class="en-t">"Do we have to host in Switzerland, or do we just want to?"</span></p>
       </div>
       <div class="mod glass">
         <span class="num">05 / SECURITY</span>
         <h3><span class="de-t">Security & Monitoring</span><span class="en-t">Security & Monitoring</span></h3>
-        <p><span class="de-t">Prompt Injection ist kein theoretisches Risiko — wir zeigen an Beispielen, wie Angriffe aussehen und welche Verteidigungslinien funktionieren: Input-Härtung, Tool-Sandboxing, Output-Filter, Berechtigungsarchitektur. Dazu Observability für LLM-Systeme: was man loggt, was man misst, wann man alarmiert.</span><span class="en-t block">Prompt injection is not a theoretical risk — we show with examples what attacks look like and which lines of defense work: input hardening, tool sandboxing, output filtering, permission architecture. Plus observability for LLM systems: what to log, what to measure, when to alert.</span></p>
+        <p><span class="de-t">Prompt Injection ist kein theoretisches Risiko, wir zeigen an Beispielen, wie Angriffe aussehen und welche Verteidigungslinien funktionieren: Input-Härtung, Tool-Sandboxing, Output-Filter, Berechtigungsarchitektur. Dazu Observability für LLM-Systeme: was man loggt, was man misst, wann man alarmiert.</span><span class="en-t block">Prompt injection is not a theoretical risk, we show with examples what attacks look like and which lines of defense work: input hardening, tool sandboxing, output filtering, permission architecture. Plus observability for LLM systems: what to log, what to measure, when to alert.</span></p>
         <p class="q"><span class="de-t">«Was passiert, wenn jemand unser System gezielt manipuliert?»</span><span class="en-t">"What happens when someone deliberately manipulates our system?"</span></p>
       </div>
       <div class="mod glass">
         <span class="num">06 / MAKE OR BUY</span>
         <h3>Make or Buy</h3>
-        <p><span class="de-t">Der Markt an GenAI-Produkten ist unübersichtlich und die Demos sind alle gut. Wir bringen ein Entscheidungsraster mit realen Kostenpunkten mit: Was kauft man ein, was baut man selbst, welche Teamgrössen und Skills braucht der Eigenbau wirklich — und welche Verträge man unterschreiben kann, ohne sich auf Jahre zu binden.</span><span class="en-t block">The GenAI product market is crowded and every demo looks good. We bring a decision matrix with real cost reference points: what to buy, what to build, what team sizes and skills in-house building really requires — and which contracts you can sign without locking yourself in for years.</span></p>
-        <p class="q"><span class="de-t">«Bauen wir das selbst — oder zahlen wir lieber jemandem dafür?»</span><span class="en-t">"Do we build this ourselves — or pay someone else to?"</span></p>
+        <p><span class="de-t">Der Markt an GenAI-Produkten ist unübersichtlich und die Demos sind alle gut. Wir bringen ein Entscheidungsraster mit realen Kostenpunkten mit: Was kauft man ein, was baut man selbst, welche Teamgrössen und Skills braucht der Eigenbau wirklich, und welche Verträge man unterschreiben kann, ohne sich auf Jahre zu binden.</span><span class="en-t block">The GenAI product market is crowded and every demo looks good. We bring a decision matrix with real cost reference points: what to buy, what to build, what team sizes and skills in-house building really requires, and which contracts you can sign without locking yourself in for years.</span></p>
+        <p class="q"><span class="de-t">«Bauen wir das selbst, oder zahlen wir lieber jemandem dafür?»</span><span class="en-t">"Do we build this ourselves, or pay someone else to?"</span></p>
       </div>
     </div>
   </div>
@@ -304,11 +305,11 @@
     </div>
 
     <div class="slot glass break"><span class="time">08.30</span><h3><span class="de-t">Ankommen, Kaffee</span><span class="en-t">Arrival, coffee</span></h3><p></p></div>
-    <div class="slot glass"><span class="time">09.00</span><h3><span class="de-t">Lagebild: Enterprise GenAI 2026</span><span class="en-t">State of play: enterprise GenAI 2026</span></h3><p><span class="de-t">Was in regulierten Schweizer Unternehmen heute produktiv läuft, was gescheitert ist und warum — ohne Anbieterfolklore.</span><span class="en-t">What runs in production in regulated Swiss enterprises today, what failed and why — without vendor folklore.</span></p></div>
+    <div class="slot glass"><span class="time">09.00</span><h3><span class="de-t">Lagebild: Enterprise GenAI 2026</span><span class="en-t">State of play: enterprise GenAI 2026</span></h3><p><span class="de-t">Was in regulierten Schweizer Unternehmen heute produktiv läuft, was gescheitert ist und warum, ohne Anbieterfolklore.</span><span class="en-t">What runs in production in regulated Swiss enterprises today, what failed and why, without vendor folklore.</span></p></div>
     <div class="slot glass"><span class="time">09.45</span><h3><span class="de-t">Modul 01+02: Agents, Vibe Coding & RAG</span><span class="en-t">Modules 01+02: agents, vibe coding & RAG</span></h3><p><span class="de-t">Live-Demonstrationen an realitätsnahen Codebasen und Datenbeständen, danach: Workflows, Evaluation, Adoption.</span><span class="en-t">Live demonstrations on realistic codebases and data estates, then: workflows, evaluation, adoption.</span></p></div>
-    <div class="slot glass break"><span class="time">12.15</span><h3><span class="de-t">Lunch — und die Fragen, die man sonst nicht stellt</span><span class="en-t">Lunch — and the questions one doesn't usually ask</span></h3><p></p></div>
-    <div class="slot glass"><span class="time">13.15</span><h3><span class="de-t">Modul 03+04: Governance, Cloud & Swiss Hosting</span><span class="en-t">Modules 03+04: governance, cloud & Swiss hosting</span></h3><p><span class="de-t">Freigabeprozesse, die tragen. Azure/GCP/AWS im Vergleich, Datenresidenz und die Schweiz-Frage — mit Vorlagen.</span><span class="en-t">Approval processes that hold. Azure/GCP/AWS compared, data residency and the Switzerland question — with templates.</span></p></div>
-    <div class="slot glass"><span class="time">14.45</span><h3><span class="de-t">Modul 05+06: Security, Monitoring & Make-or-Buy</span><span class="en-t">Modules 05+06: security, monitoring & make-or-buy</span></h3><p><span class="de-t">Prompt-Injection-Demonstration, Verteidigungslinien, Observability — und das Entscheidungsraster für Einkauf vs. Eigenbau.</span><span class="en-t">Prompt-injection demonstration, lines of defense, observability — and the buy-vs-build decision matrix.</span></p></div>
+    <div class="slot glass break"><span class="time">12.15</span><h3><span class="de-t">Lunch und die Fragen, die man sonst nicht stellt</span><span class="en-t">Lunch and the questions one doesn't usually ask</span></h3><p></p></div>
+    <div class="slot glass"><span class="time">13.15</span><h3><span class="de-t">Modul 03+04: Governance, Cloud & Swiss Hosting</span><span class="en-t">Modules 03+04: governance, cloud & Swiss hosting</span></h3><p><span class="de-t">Freigabeprozesse, die tragen. Azure/GCP/AWS im Vergleich, Datenresidenz und die Schweiz-Frage, mit Vorlagen.</span><span class="en-t">Approval processes that hold. Azure/GCP/AWS compared, data residency and the Switzerland question, with templates.</span></p></div>
+    <div class="slot glass"><span class="time">14.45</span><h3><span class="de-t">Modul 05+06: Security, Monitoring & Make-or-Buy</span><span class="en-t">Modules 05+06: security, monitoring & make-or-buy</span></h3><p><span class="de-t">Prompt-Injection-Demonstration, Verteidigungslinien, Observability, und das Entscheidungsraster für Einkauf vs. Eigenbau.</span><span class="en-t">Prompt-injection demonstration, lines of defense, observability, and the buy-vs-build decision matrix.</span></p></div>
     <div class="slot glass"><span class="time">15.45</span><h3><span class="de-t">Ihr Fahrplan</span><span class="en-t">Your roadmap</span></h3><p><span class="de-t">Moderierte Arbeitssession: Sie übertragen die Raster des Tages auf Ihre Organisation. Ergebnis: priorisierte nächste Schritte, die Sie am Montag vertreten können.</span><span class="en-t">Facilitated working session: you apply the day's frameworks to your organisation. Result: prioritised next steps you can defend on Monday.</span></p></div>
     <div class="slot glass break"><span class="time">17.00</span><h3><span class="de-t">Apéro</span><span class="en-t">Apéro</span></h3><p></p></div>
   </div>
@@ -342,17 +343,17 @@
     <div class="pricing-panel glass">
       <span class="mono mono-a"><span class="de-t">§ 5 — Anmeldung</span><span class="en-t">§ 5 — Registration</span></span>
       <h2 style="margin-top:16px"><span class="de-t">Sechzehn Plätze. <span class="grad-text">Bewusst.</span></span><span class="en-t block">Sixteen seats. <span class="grad-text">Deliberately.</span></span></h2>
-      <p class="body-l" style="max-width:620px;margin-bottom:48px"><span class="de-t">Ab siebzehn Personen wird aus einem Arbeitstag ein Vortrag. Wir bleiben darunter — und nehmen uns dafür Ihre konkreten Fragen vor.</span><span class="en-t block">Beyond sixteen people, a working day becomes a lecture. We stay below that — and use the room for your specific questions instead.</span></p>
+      <p class="body-l" style="max-width:620px;margin-bottom:48px"><span class="de-t">Ab siebzehn Personen wird aus einem Arbeitstag ein Vortrag. Wir bleiben darunter, und nehmen uns dafür Ihre konkreten Fragen vor.</span><span class="en-t block">Beyond sixteen people, a working day becomes a lecture. We stay below that, and use the room for your specific questions instead.</span></p>
       <div class="price-grid">
         <div>
-          <div class="price-num">CHF [XXX] <small>/ <span class="de-t">Person, exkl. MwSt.</span><span class="en-t">person, excl. VAT</span></small></div>
+          <div class="price-num pending"><span class="de-t">Nächster Termin<br>in Planung</span><span class="en-t">Next date<br>being scheduled</span></div>
           <p class="price-note">
-            <span class="de-t">Im Preis inbegriffen sind sämtliche Arbeitsunterlagen, Vorlagen und Entscheidungsraster zur freien Verwendung im eigenen Unternehmen sowie Verpflegung über den ganzen Tag.</span>
-            <span class="en-t block">The price includes all working materials, templates and decision matrices for free use within your own organisation, plus full catering throughout the day.</span>
+            <span class="de-t">Als Inhouse-Format führen wir den Tag bereits heute durch, bei Ihnen und auf Ihre Ausgangslage zugeschnitten. Für den nächsten öffentlichen Termin in Zürich führen wir eine Liste: Wir melden uns mit Datum und Preis, sobald beides steht. Keine Verpflichtung.</span>
+            <span class="en-t block">We already run the day as an in-house format, at your offices and tailored to your situation. For the next public date in Zurich we keep a list: we will come back to you with the date and price as soon as both are set. No obligation.</span>
           </p>
           <div class="btn-row">
-            <a class="btn btn-grad" href="mailto:hello@euler-lab.ch?subject=Anmeldung%20Executive%20Workshop%20Enterprise%20GenAI"><span class="de-t">Platz anfragen</span><span class="en-t">Request a seat</span></a>
-            <a class="btn btn-glass" href="mailto:hello@euler-lab.ch?subject=Inhouse%20Workshop"><span class="de-t">Als Inhouse-Format anfragen</span><span class="en-t">Request as in-house format</span></a>
+            <a class="btn btn-grad" href="mailto:hello@euler-lab.ch?subject=Inhouse%20Workshop"><span class="de-t">Inhouse-Workshop anfragen</span><span class="en-t">Request in-house workshop</span></a>
+            <a class="btn btn-glass" href="mailto:hello@euler-lab.ch?subject=Warteliste%20Executive%20Workshop%20Enterprise%20GenAI"><span class="de-t">Auf die Liste setzen</span><span class="en-t">Join the list</span></a>
           </div>
         </div>
         <ul class="incl">
@@ -376,14 +377,14 @@
 
     <details>
       <summary><span class="de-t">Wie technisch ist der Tag? Muss ich programmieren können?</span><span class="en-t">How technical is the day? Do I need to code?</span></summary>
-      <div class="a"><span class="de-t">Nein. Wir zeigen Live-Demonstrationen, aber niemand muss selbst Code schreiben. Der Tag ist für Entscheider:innen konzipiert: Sie sollen danach beurteilen können, was Ihre Teams tun — nicht es selbst tun. Technische Vertiefung bieten wir in unseren Enablement-Programmen.</span><span class="en-t block">No. We show live demonstrations, but nobody has to write code. The day is designed for decision makers: afterwards you should be able to judge what your teams are doing — not do it yourself. Technical deep-dives are what our enablement programmes are for.</span></div>
+      <div class="a"><span class="de-t">Nein. Wir zeigen Live-Demonstrationen, aber niemand muss selbst Code schreiben. Der Tag ist für Entscheider:innen konzipiert: Sie sollen danach beurteilen können, was Ihre Teams tun, nicht es selbst tun. Technische Vertiefung bieten wir in unseren Enablement-Programmen.</span><span class="en-t block">No. We show live demonstrations, but nobody has to write code. The day is designed for decision makers: afterwards you should be able to judge what your teams are doing, not do it yourself. Technical deep-dives are what our enablement programmes are for.</span></div>
     </details>
     <details>
       <summary><span class="de-t">Funktioniert das auch firmenintern, nur für unser Haus?</span><span class="en-t">Does this also work in-house, just for our organisation?</span></summary>
-      <div class="a"><span class="de-t">Ja, und oft besser: Im Inhouse-Format arbeiten wir den ganzen Nachmittag an Ihrer konkreten Ausgangslage, inklusive vertraulicher Themen, die man in gemischter Runde nicht bespricht. Anfrage genügt — wir melden uns innert zweier Arbeitstage.</span><span class="en-t block">Yes, and often better: in the in-house format we spend the entire afternoon on your specific situation, including confidential topics one doesn't discuss in a mixed group. Just ask — we respond within two working days.</span></div>
+      <div class="a"><span class="de-t">Ja, und oft besser: Im Inhouse-Format arbeiten wir den ganzen Nachmittag an Ihrer konkreten Ausgangslage, inklusive vertraulicher Themen, die man in gemischter Runde nicht bespricht. Anfrage genügt, wir melden uns innert zweier Arbeitstage.</span><span class="en-t block">Yes, and often better: in the in-house format we spend the entire afternoon on your specific situation, including confidential topics one doesn't discuss in a mixed group. Just ask, we respond within two working days.</span></div>
     </details>
     <details>
-      <summary><span class="de-t">Welche Unterlagen nehmen wir mit — und dürfen wir sie verwenden?</span><span class="en-t">What materials do we take away — and may we use them?</span></summary>
+      <summary><span class="de-t">Welche Unterlagen nehmen wir mit, und dürfen wir sie verwenden?</span><span class="en-t">What materials do we take away, and may we use them?</span></summary>
       <div class="a"><span class="de-t">Sie erhalten alle gezeigten Entscheidungsraster und Vorlagen (Governance-Dokumente, Evaluations-Checklisten, Make-or-Buy-Raster, Cloud-Vergleich) zur freien Verwendung im eigenen Unternehmen. Nicht enthalten ist die Weitergabe an Dritte oder kommerzielle Nutzung ausserhalb Ihres Hauses.</span><span class="en-t block">You receive all decision matrices and templates shown (governance documents, evaluation checklists, make-or-buy matrix, cloud comparison) for free use within your own organisation. Not included: passing them to third parties or commercial use outside your organisation.</span></div>
     </details>
     <details>
@@ -391,8 +392,8 @@
       <div class="a"><span class="de-t">Standardmässig auf Deutsch, die Unterlagen sind auf Englisch. Ab zwei nicht-deutschsprachigen Teilnehmenden wechseln wir vollständig auf Englisch. Inhouse-Formate führen wir in der Sprache Ihrer Wahl durch.</span><span class="en-t block">By default in German, with materials in English. With two or more non-German-speaking participants we switch entirely to English. In-house formats are held in the language of your choice.</span></div>
     </details>
     <details>
-      <summary><span class="de-t">Was, wenn der Termin nicht passt?</span><span class="en-t">What if the date doesn't work?</span></summary>
-      <div class="a"><span class="de-t">Schreiben Sie uns trotzdem — wir führen eine Warteliste für Folgetermine und priorisieren danach, wo das Interesse am grössten ist. Bis 14 Tage vor dem Workshop können Sie kostenlos auf einen Folgetermin umbuchen oder eine Kollegin oder einen Kollegen anstelle schicken.</span><span class="en-t block">Write to us anyway — we keep a waiting list for follow-up dates and prioritise where interest is greatest. Up to 14 days before the workshop you can rebook to a later date free of charge, or send a colleague in your place.</span></div>
+      <summary><span class="de-t">Wann findet der nächste Workshop statt?</span><span class="en-t">When is the next workshop?</span></summary>
+      <div class="a"><span class="de-t">Der nächste öffentliche Termin in Zürich ist noch nicht angesetzt. Wir führen eine Liste und legen das Datum dann dorthin, wo das Interesse am grössten ist; Sie erhalten Datum und Preis, bevor irgendetwas verbindlich wird. Als Inhouse-Format ist der Tag jederzeit buchbar, in der Regel mit vier bis sechs Wochen Vorlauf.</span><span class="en-t block">The next public date in Zurich is not yet set. We keep a list and will place the date where interest is greatest; you get the date and price before anything becomes binding. As an in-house format the day is available at any time, usually with four to six weeks of lead time.</span></div>
     </details>
   </div>
 </section>
@@ -405,7 +406,10 @@
   </div>
 </footer>
 
-<!-- TODO: startDate aktualisieren, sobald das Workshop-Datum feststeht (Format: 2026-MM-TT) -->
+<!-- Event-Structured-Data auskommentiert, solange kein Datum feststeht.
+     Zum Reaktivieren: startDate auf das echte Datum setzen, availability auf InStock,
+     und price/priceCurrency ergaenzen. -->
+<!--
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -423,6 +427,7 @@
   "audience": {"@type": "BusinessAudience", "name": "CTOs, CIOs, Engineering-Leads, Risk- & Compliance-Verantwortliche"}
 }
 </script>
+-->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -432,7 +437,7 @@
     {"@type": "Question", "name": "Gibt es den Workshop auch als Inhouse-Format?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Im Inhouse-Format wird der ganze Nachmittag an der konkreten Ausgangslage des Unternehmens gearbeitet, inklusive vertraulicher Themen."}},
     {"@type": "Question", "name": "Welche Unterlagen erhalten Teilnehmende?", "acceptedAnswer": {"@type": "Answer", "text": "Alle Entscheidungsraster und Vorlagen (Governance, Evaluation, Make-or-Buy, Cloud-Vergleich) zur freien Verwendung im eigenen Unternehmen."}},
     {"@type": "Question", "name": "In welcher Sprache findet der Workshop statt?", "acceptedAnswer": {"@type": "Answer", "text": "Standardmässig Deutsch mit englischen Unterlagen. Ab zwei nicht-deutschsprachigen Teilnehmenden vollständig auf Englisch."}},
-    {"@type": "Question", "name": "Was, wenn der Termin nicht passt?", "acceptedAnswer": {"@type": "Answer", "text": "Warteliste für Folgetermine; bis 14 Tage vorher kostenlose Umbuchung oder Vertretung durch eine Kollegin oder einen Kollegen."}}
+    {"@type": "Question", "name": "Wann findet der nächste Workshop statt?", "acceptedAnswer": {"@type": "Answer", "text": "Der nächste öffentliche Termin ist noch nicht angesetzt; wir führen eine Interessentenliste. Als Inhouse-Format jederzeit buchbar."}}
   ]
 }
 </script>

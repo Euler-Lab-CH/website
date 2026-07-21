@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EULER LAB">
 <meta property="og:title" content="EULER LAB — GenAI Beratung Schweiz: Agents, RAG, Governance & Swiss Hosting">
-<meta property="og:description" content="GenAI im Unternehmen produktiv machen — mit Erfahrung aus GenAI-Teams regulierter Schweizer Grossunternehmen. Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting.">
+<meta property="og:description" content="GenAI im Unternehmen produktiv machen, mit Erfahrung aus GenAI-Teams regulierter Schweizer Grossunternehmen. Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting.">
 <meta property="og:url" content="https://euler-lab.ch/">
 <meta property="og:image" content="https://euler-lab.ch/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -135,6 +135,7 @@
   /* Team */
   .team{background:var(--bg-2)}
   .member{display:grid;grid-template-columns:300px 1fr;gap:50px;padding:36px 38px;margin-bottom:20px}
+  .member .photo{width:148px;height:148px;border-radius:14px;object-fit:cover;display:block;margin-bottom:20px;border:1px solid var(--line);filter:grayscale(1) contrast(1.03)}
   .member h3{font-size:23px;font-weight:600;margin-bottom:4px}
   .member .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .member p{color:var(--ink-soft);font-size:15.5px}
@@ -235,8 +236,8 @@
       <span class="en-t block">Every company has a GenAI strategy. <span class="grad-text">Few have systems in production.</span></span>
     </h1>
     <p class="hero-sub">
-      <span class="de-t">euler-lab ist eine Beratung für Unternehmen, die generative KI nicht evaluieren, sondern einsetzen wollen. Wir haben Agents, RAG-Systeme und Governance-Frameworks in regulierten Schweizer Grossunternehmen aufgebaut. Diese Erfahrung bringen wir dorthin, wo sie gerade fehlt: in Ihr Haus.</span>
-      <span class="en-t block">euler-lab is a consultancy for organisations that want to deploy generative AI, not evaluate it indefinitely. We built agents, RAG systems and governance frameworks inside regulated Swiss enterprises. We bring that experience to where it is missing: your organisation.</span>
+      <span class="de-t">Wir bauen und betreiben GenAI-Systeme in regulierten Schweizer Unternehmen: Agents in Engineering-Teams, RAG auf gewachsenen Datenbeständen, Freigabeprozesse, die tatsächlich funktionieren. Dieselbe Arbeit machen wir für Sie, hands-on und zu zweit.</span>
+      <span class="en-t block">We build and run GenAI systems inside regulated Swiss enterprises: agents in engineering teams, RAG on messy legacy data, approval processes that actually work. We do the same work for you, hands-on, just the two of us.</span>
     </p>
     <div class="hero-ctas">
       <a class="btn btn-grad" href="#kontakt"><span class="de-t">Erstgespräch vereinbaren</span><span class="en-t">Book an intro call</span></a>
@@ -254,16 +255,16 @@
     </div>
     <div>
       <p class="lead">
-        <span class="de-t">Zwischen einem GenAI-Piloten und einem produktiven System liegt in einem regulierten Unternehmen kein Sprint. Es liegt dazwischen: Datenresidenz, Risikoabnahme, Cloud-Verträge, Security-Reviews, Betriebskonzepte — und eine Organisation, die mitkommen muss.</span>
-        <span class="en-t block">In a regulated enterprise, the distance between a GenAI pilot and a production system is not a sprint. In between sit data residency, risk sign-off, cloud contracts, security reviews, operating models — and an organisation that has to come along.</span>
+        <span class="de-t">Zwischen einem GenAI-Piloten und einem produktiven System liegt in einem regulierten Unternehmen kein Sprint. Es liegt dazwischen: Datenresidenz, Risikoabnahme, Cloud-Verträge, Security-Reviews, Betriebskonzepte, und eine Organisation, die mitkommen muss.</span>
+        <span class="en-t block">In a regulated enterprise, the distance between a GenAI pilot and a production system is not a sprint. In between sit data residency, risk sign-off, cloud contracts, security reviews, operating models, and an organisation that has to come along.</span>
       </p>
       <p>
-        <span class="de-t">Wir kennen diese Strecke, weil wir sie selbst gegangen sind. Im letzten Jahr haben wir in Unternehmen wie grossen Schweizer Versicherern und Banken untersucht und mitgestaltet, wie Enterprise-GenAI tatsächlich funktioniert: wie Entwicklungsteams mit Coding-Agents arbeiten, wie RAG-Systeme an echten Unternehmensdaten bestehen, welche Governance Audits standhält, was Azure, GCP und AWS für GenAI wirklich taugen, wie man in der Schweiz hostet, wie man LLM-Systeme überwacht und gegen Prompt Injection absichert, und wann man kauft statt baut.</span>
-        <span class="en-t block">We know this road because we have walked it ourselves. Over the past year, inside organisations such as major Swiss insurers and banks, we examined and shaped how enterprise GenAI actually works: how engineering teams work with coding agents, how RAG systems hold up against real corporate data, which governance survives audits, what Azure, GCP and AWS are actually worth for GenAI, how to host in Switzerland, how to monitor LLM systems and harden them against prompt injection, and when to buy instead of build.</span>
+        <span class="de-t">Die Fragen, die dort auftauchen, sind selten die aus den Blogposts. Wie berechtigt man ein RAG-System, wenn die Quelldokumente selbst kein sauberes Berechtigungsmodell haben. Warum ein Retrieval, das im Test 90 Prozent trifft, im Betrieb an Dokumenten scheitert, die niemand gepflegt hat. Wie man Coding-Agents in einem Team einführt, das seinen Code weiterhin verantworten muss. Was ein Security-Review von einem LLM-System sehen will, das kein deterministisches Verhalten hat.</span>
+        <span class="en-t block">The questions that come up there are rarely the ones from the blog posts. How to enforce permissions in a RAG system when the source documents have no clean permission model themselves. Why a retrieval that hits 90 percent in testing fails in production on documents nobody has maintained. How to introduce coding agents into a team that still has to answer for its code. What a security review wants to see from an LLM system that has no deterministic behaviour.</span>
       </p>
       <p>
-        <span class="de-t"><strong>Das ist kein Beratungswissen aus zweiter Hand.</strong> Es ist operative Erfahrung aus Teams, die diese Systeme heute betreiben. Wir haben euler-lab gegründet, weil sehr viele Unternehmen genau diese Fragen gerade jetzt beantworten müssen, und es keinen Grund gibt, dass jedes von ihnen dieselben teuren Umwege geht.</span>
-        <span class="en-t block"><strong>This is not second-hand consulting knowledge.</strong> It is operational experience from teams running these systems today. We founded euler-lab because a great number of companies need to answer exactly these questions right now, and there is no reason each of them should take the same expensive detours.</span>
+        <span class="de-t"><strong>Wir haben diese Fragen nicht recherchiert, sondern beantworten müssen.</strong> Das ist der Unterschied, den wir anbieten: Wir kennen die Stellen, an denen es klemmt, bevor Sie dort ankommen, und wir sagen Ihnen auch, welche davon Sie getrost ignorieren können.</span>
+        <span class="en-t block"><strong>We didn't research these questions, we had to answer them.</strong> That is the difference we offer: we know the places where it gets stuck before you get there, and we will also tell you which of them you can safely ignore.</span>
       </p>
     </div>
   </div>
@@ -273,47 +274,47 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="mono mono-a"><span class="de-t">§ 2 — Leistungen</span><span class="en-t">§ 2 — Services</span></span>
-      <h2 style="margin-top:16px"><span class="de-t">Vier Felder. In allen haben wir geliefert, bevor wir beraten haben.</span><span class="en-t block">Four fields. In all of them, we delivered before we advised.</span></h2>
+      <h2 style="margin-top:16px"><span class="de-t">Vier Felder, in denen wir selbst gebaut haben, bevor wir beraten.</span><span class="en-t block">Four fields we built in ourselves before we advised in them.</span></h2>
     </div>
     <div class="svc-grid">
       <div class="svc glass">
-        <span class="num">01 / GOVERNANCE</span>
-        <h3><span class="de-t">Governance, Compliance & Risiko</span><span class="en-t">Governance, Compliance & Risk</span></h3>
-        <p><span class="de-t">Die meisten GenAI-Initiativen scheitern nicht an der Technik, sondern an der Freigabe. Wir entwerfen AI-Richtlinien, Risiko-Frameworks und Abnahmeprozesse, die vor Audit, Recht und Aufsicht bestehen und trotzdem schlank genug sind, dass Teams tatsächlich damit arbeiten. Wir wissen aus eigener Erfahrung, welche Kontrollen ein Prüfer sehen will und wo Governance zur Ausrede wird, nichts zu tun.</span><span class="en-t block">Most GenAI initiatives don't fail on technology — they fail at sign-off. We design AI policies, risk frameworks and approval processes that hold up before audit, legal and regulators and still stay lean enough that teams actually work with them. We know first-hand which controls an auditor wants to see, and where governance becomes an excuse to do nothing.</span></p>
-        <ul>
-          <li><span class="de-t">AI-Policy & Nutzungsrichtlinien, revisionsfähig</span><span class="en-t">AI policy & usage guidelines, audit-ready</span></li>
-          <li><span class="de-t">Risiko-Klassifizierung für AI-Use-Cases</span><span class="en-t">Risk classification for AI use cases</span></li>
-          <li><span class="de-t">Freigabeprozess vom Use-Case bis zur Produktion</span><span class="en-t">Approval process from use case to production</span></li>
-        </ul>
-      </div>
-      <div class="svc glass">
-        <span class="num">02 / AGENTS</span>
+        <span class="num">01 / AGENTS</span>
         <h3><span class="de-t">Agents & das Zeitalter des Vibe Coding</span><span class="en-t">Agents & the Age of Vibe Coding</span></h3>
-        <p><span class="de-t">Coding-Agents verändern, wie Software entsteht, schneller als die meisten Organisationen ihre Prozesse anpassen. Die Frage ist nicht mehr, ob Ihre Teams mit Agents arbeiten, sondern ob sie es kontrolliert tun. Wir begleiten Engineering-Organisationen von den ersten Experimenten bis zur skalierten Adoption und trainieren Teams direkt an ihrer eigenen Codebasis statt an Folien.</span><span class="en-t block">Coding agents are changing how software gets built, faster than most organisations adapt their processes. The question is no longer whether your teams work with agents, but whether they do so in a controlled way. We guide engineering organisations from first experiments to scaled adoption and train teams directly on their own codebase instead of slides.</span></p>
+        <p><span class="de-t">Typisch: Lizenzen sind verteilt, die Nutzung stagniert bei zwanzig Prozent, und niemand kann sagen, ob die Sache etwas bringt. Oder umgekehrt, die Teams sind begeistert und das Review kommt nicht mehr nach. Wir arbeiten an Ihrer Codebasis mit Ihren Entwicklern, statt zu schulen: welche Aufgaben sich lohnen, wie man Kontext bereitstellt, wo man Agents bewusst nicht einsetzt.</span><span class="en-t block">Typical: licences are handed out, usage stalls at twenty percent, and nobody can say whether the thing pays off. Or the reverse, the teams are enthusiastic and review can no longer keep up. We work on your codebase with your developers rather than running training: which tasks are worth it, how to supply context, and where deliberately not to use agents.</span></p>
         <ul>
-          <li><span class="de-t">Agent-Adoption-Strategie & Rollout-Plan</span><span class="en-t">Agent adoption strategy & rollout plan</span></li>
-          <li><span class="de-t">Hands-on-Enablement an Ihrer Codebasis</span><span class="en-t">Hands-on enablement on your own codebase</span></li>
-          <li><span class="de-t">Review- & Qualitätsprozesse für agentischen Code</span><span class="en-t">Review & quality processes for agentic code</span></li>
+          <li><span class="de-t">Rollout-Plan mit Metriken, die nicht nur Aktivität messen</span><span class="en-t">Rollout plan with metrics that measure more than activity</span></li>
+          <li><span class="de-t">Zwei bis drei Wochen Pair-Programming in Ihren Teams</span><span class="en-t">Two to three weeks of pair programming inside your teams</span></li>
+          <li><span class="de-t">Review-Regeln und Repo-Setup für agentischen Code</span><span class="en-t">Review rules and repo setup for agentic code</span></li>
         </ul>
       </div>
       <div class="svc glass">
-        <span class="num">03 / RAG & PLATTFORM</span>
+        <span class="num">02 / RAG & PLATTFORM</span>
         <h3><span class="de-t">RAG & Plattform-Architektur</span><span class="en-t">RAG & Platform Architecture</span></h3>
-        <p><span class="de-t">Retrieval-Augmented Generation ist auf Folien einfach und an echten Unternehmensdaten schwer. Berechtigungen, Dokumentqualität, Evaluation, Halluzinationskontrolle: Hier entscheidet sich, ob ein System Vertrauen verdient. Wir entwerfen RAG- und Plattform-Architekturen auf Azure, GCP oder AWS, inklusive der unbequemen Teile: Evaluations-Pipelines, Monitoring, Kostenkontrolle und Abwehr von Prompt Injection.</span><span class="en-t block">Retrieval-augmented generation is easy on slides and hard on real corporate data. Permissions, document quality, evaluation, hallucination control: this is where a system earns trust — or doesn't. We design RAG and platform architectures on Azure, GCP or AWS, including the uncomfortable parts: evaluation pipelines, monitoring, cost control and prompt-injection defense.</span></p>
+        <p><span class="de-t">Typisch: Der Prototyp hat begeistert, die Pilotgruppe ist ernüchtert, und die Diskussion dreht sich um Modelle, obwohl das Problem im Retrieval liegt. Wir bauen zuerst ein Evaluationsset aus echten Nutzerfragen, damit «es antwortet manchmal falsch» zu einer Zahl wird, die man verbessern kann. Danach die Architektur: Chunking, Berechtigungen bis auf Dokumentebene, Monitoring, Prompt-Injection-Abwehr.</span><span class="en-t block">Typical: the prototype impressed, the pilot group is disillusioned, and the discussion revolves around models although the problem sits in retrieval. We first build an evaluation set from real user questions, so that "it sometimes answers incorrectly" becomes a number you can improve. Then the architecture: chunking, permissions down to document level, monitoring, prompt-injection defence.</span></p>
         <ul>
-          <li><span class="de-t">Referenzarchitektur für Ihren Cloud-Stack</span><span class="en-t">Reference architecture for your cloud stack</span></li>
-          <li><span class="de-t">Evaluations- & Monitoring-Konzept für LLM-Systeme</span><span class="en-t">Evaluation & monitoring concept for LLM systems</span></li>
+          <li><span class="de-t">Evaluationsset und Testpipeline, die bei Ihnen bleiben</span><span class="en-t">Evaluation set and test pipeline that stay with you</span></li>
+          <li><span class="de-t">Referenzarchitektur für Azure, GCP oder AWS</span><span class="en-t">Reference architecture for Azure, GCP or AWS</span></li>
           <li><span class="de-t">Security-Review inkl. Prompt-Injection-Härtung</span><span class="en-t">Security review incl. prompt-injection hardening</span></li>
+        </ul>
+      </div>
+      <div class="svc glass">
+        <span class="num">03 / GOVERNANCE</span>
+        <h3><span class="de-t">Governance, Compliance & Risiko</span><span class="en-t">Governance, Compliance & Risk</span></h3>
+        <p><span class="de-t">Typisch: Der Use Case ist fertig, aber die Freigabe hängt seit Wochen zwischen Risk, Security und Datenschutz, weil unklar ist, wer entscheiden darf. Wir klären die Zuständigkeiten und klassifizieren Use Cases so, dass die grosse Mehrheit ohne Gremium durchläuft und nur die wenigen heiklen wirklich geprüft werden. Sie erhalten Dokumente, die einem Audit standhalten, aber kurz genug sind, dass Teams sie lesen.</span><span class="en-t block">Typical: the use case is ready, but sign-off has been stuck for weeks between risk, security and data protection because it is unclear who may decide. We settle the responsibilities and classify use cases so that the large majority passes without a committee and only the few sensitive ones are genuinely reviewed. You get documents that survive an audit but are short enough that teams actually read them.</span></p>
+        <ul>
+          <li><span class="de-t">Risikoklassifizierung mit klaren Entscheidungsrechten</span><span class="en-t">Risk classification with clear decision rights</span></li>
+          <li><span class="de-t">AI-Policy und Nutzungsrichtlinien, revisionsfähig</span><span class="en-t">AI policy and usage guidelines, audit-ready</span></li>
+          <li><span class="de-t">Freigabeprozess vom Use Case bis zur Produktion</span><span class="en-t">Approval process from use case to production</span></li>
         </ul>
       </div>
       <div class="svc glass">
         <span class="num">04 / SWISS HOSTING</span>
         <h3><span class="de-t">Swiss Hosting & Sourcing</span><span class="en-t">Swiss Hosting & Sourcing</span></h3>
-        <p><span class="de-t">«Können wir das in der Schweiz hosten?» ist meist die zweite Frage in jedem Steering Committee, direkt nach «Was darf das kosten?». Wir beantworten beide: Datenresidenz, Schweizer Cloud-Regionen, Souveränitätsanforderungen, On-Prem-Inferenz. Wir zeigen, was regulatorisch nötig, was technisch sinnvoll und was schlicht teure Symbolik ist. Dazu gehört die Make-or-Buy-Frage.</span><span class="en-t block">"Can we host this in Switzerland?" is usually the second question in any steering committee, right after "what will it cost?". We answer both: data residency, Swiss cloud regions, sovereignty requirements, on-prem inference. We show what is regulatorily required, what is technically sensible, and what is merely expensive symbolism. That includes the make-or-buy question.</span></p>
+        <p><span class="de-t">Typisch: «Können wir das in der Schweiz hosten?» kommt im Steering auf, und niemand unterscheidet zwischen dem, was die Regulierung verlangt, und dem, was sich einfach sicherer anfühlt. Der Unterschied kostet oft einen sechsstelligen Betrag pro Jahr. Wir gehen die Anforderungen einzeln durch: Was muss in der Schweiz liegen, was reicht in der EU, wo lohnt sich On-Prem-Inferenz und wo zahlt man für ein gutes Gefühl.</span><span class="en-t block">Typical: "can we host this in Switzerland?" comes up in steering, and nobody distinguishes between what the regulation demands and what simply feels safer. The difference often costs a six-figure sum per year. We go through the requirements one by one: what must sit in Switzerland, what is fine in the EU, where on-prem inference pays off, and where you are paying for peace of mind.</span></p>
         <ul>
-          <li><span class="de-t">Hosting-Strategie Schweiz (Cloud / Hybrid / On-Prem)</span><span class="en-t">Swiss hosting strategy (cloud / hybrid / on-prem)</span></li>
-          <li><span class="de-t">Make-or-Buy-Entscheidungsraster mit Kostenmodell</span><span class="en-t">Make-or-buy decision matrix with cost model</span></li>
-          <li><span class="de-t">Anbieter-Evaluation & Vertragsbegleitung</span><span class="en-t">Vendor evaluation & contract support</span></li>
+          <li><span class="de-t">Anforderungen getrennt nach «muss», «sollte» und «Symbolik»</span><span class="en-t">Requirements separated into must, should and symbolism</span></li>
+          <li><span class="de-t">Hosting-Optionen mit Kostenmodell über drei Jahre</span><span class="en-t">Hosting options with a three-year cost model</span></li>
+          <li><span class="de-t">Anbieter-Evaluation und Vertragsbegleitung</span><span class="en-t">Vendor evaluation and contract support</span></li>
         </ul>
       </div>
     </div>
@@ -325,28 +326,28 @@
     <div class="sec-head">
       <span class="mono mono-a"><span class="de-t">§ 3 — Standpunkte</span><span class="en-t">§ 3 — Positions</span></span>
       <h2 style="margin-top:16px"><span class="de-t">Was wir gelernt haben und vertreten.</span><span class="en-t block">What we have learned and stand for.</span></h2>
-      <p class="body-l"><span class="de-t">Beratung ohne Haltung ist Moderation. Vier Überzeugungen aus einem Jahr Enterprise-GenAI-Praxis. Messen Sie uns daran.</span><span class="en-t block">Advisory without conviction is facilitation. Four beliefs from a year of enterprise GenAI practice — hold us to them.</span></p>
+      <p class="body-l"><span class="de-t">Vier Dinge, die wir vor unseren Projekten anders eingeschätzt hätten. Wenn Sie hier widersprechen, haben wir ein gutes Erstgespräch.</span><span class="en-t block">Four things we would have judged differently before our projects. If you disagree with any of them, we will have a good first conversation.</span></p>
     </div>
     <div class="pos-grid">
       <div class="pos">
         <span class="p-num">I</span>
-        <h3><span class="de-t">Governance ist ein Beschleuniger — wenn man sie richtig baut.</span><span class="en-t">Governance is an accelerator — if you build it right.</span></h3>
-        <p><span class="de-t">In Unternehmen mit klaren AI-Freigabeprozessen gehen Use Cases schneller live, nicht langsamer. Was Projekte tötet, ist nicht Kontrolle, sondern Unklarheit: niemand weiss, wer Ja sagen darf. Eine gute Governance beantwortet diese Frage in Tagen statt Quartalen.</span><span class="en-t block">In organisations with clear AI approval processes, use cases go live faster, not slower. What kills projects is not control but ambiguity: nobody knows who is allowed to say yes. Good governance answers that question in days, not quarters.</span></p>
+        <h3><span class="de-t">Coding-Agents verschieben den Engpass, sie lösen ihn nicht auf.</span><span class="en-t">Coding agents move the bottleneck, they don't remove it.</span></h3>
+        <p><span class="de-t">Wer Agents ausrollt, produziert plötzlich mehr Code, als das Team reviewen kann. Der Engpass wandert vom Schreiben zum Verstehen und Verantworten. Teams, die das vorher adressieren (kleinere Diffs, klare Ownership, Tests als Abnahmekriterium statt als Kür), werden tatsächlich schneller. Teams, die es nicht tun, bekommen dieselbe Menge Arbeit in schwerer prüfbarer Form.</span><span class="en-t block">Roll out agents and you suddenly produce more code than the team can review. The bottleneck moves from writing to understanding and being accountable. Teams that address this beforehand (smaller diffs, clear ownership, tests as an acceptance criterion rather than a nice-to-have) actually do get faster. Teams that don't get the same amount of work in a form that is harder to check.</span></p>
       </div>
       <div class="pos">
         <span class="p-num">II</span>
-        <h3><span class="de-t">Vibe Coding ist kein Hype-Begriff. Es ist ein Organisationsproblem.</span><span class="en-t">Vibe coding is not a hype term. It is an organisational problem.</span></h3>
-        <p><span class="de-t">Die Technologie ist da und sie funktioniert. Was fehlt, sind Review-Kultur, Verantwortlichkeiten und Ausbildung. Teams, die Agents ohne neue Arbeitsweisen einsetzen, produzieren schneller Code und schneller technische Schuld. Der Unterschied liegt nicht im Tool, sondern im Team.</span><span class="en-t block">The technology is here and it works. What's missing are review culture, accountability and training. Teams that adopt agents without new ways of working produce code faster, and technical debt faster. The difference is not the tool. It is the team.</span></p>
+        <h3><span class="de-t">RAG-Projekte scheitern an den Dokumenten, nicht am Modell.</span><span class="en-t">RAG projects fail on the documents, not on the model.</span></h3>
+        <p><span class="de-t">Der Anteil der Arbeit, der auf Modellwahl und Prompting entfällt, ist klein. Der grosse Teil ist unangenehm: veraltete Dokumente, die niemand für ungültig erklärt, drei Versionen derselben Weisung, Berechtigungen, die im Quellsystem an Ordnern hängen statt an Inhalten. Ein Evaluationsset aus echten Nutzerfragen zeigt das in zwei Wochen. Ohne dieses Set diskutiert man ein Jahr über Embeddings.</span><span class="en-t block">The share of the work that goes into model choice and prompting is small. The bulk of it is unpleasant: outdated documents nobody has declared invalid, three versions of the same directive, permissions that hang off folders in the source system rather than off content. An evaluation set built from real user questions surfaces this in two weeks. Without that set, you will spend a year arguing about embeddings.</span></p>
       </div>
       <div class="pos">
         <span class="p-num">III</span>
-        <h3><span class="de-t">Ein RAG-System ohne Evaluation ist eine Meinung.</span><span class="en-t">A RAG system without evaluation is an opinion.</span></h3>
-        <p><span class="de-t">Wer nicht systematisch misst, ob Antworten korrekt, vollständig und berechtigungskonform sind, betreibt keine Wissensplattform, sondern ein Risiko mit Chat-Interface. Evaluation, Monitoring und Prompt-Injection-Abwehr gehören in die Architektur, nicht in den Folgeauftrag.</span><span class="en-t block">If you don't systematically measure whether answers are correct, complete and permission-compliant, you are not running a knowledge platform — you are running a risk with a chat interface. Evaluation, monitoring and prompt-injection defense belong in the architecture, not in the follow-up engagement.</span></p>
+        <h3><span class="de-t">Was Projekte aufhält, ist fast nie das Nein. Es ist das fehlende Ja.</span><span class="en-t">What holds projects up is almost never the no. It is the missing yes.</span></h3>
+        <p><span class="de-t">In den seltensten Fällen verbietet jemand einen Use Case. Viel häufiger findet sich niemand, der ihn freigeben darf, weil die Zuständigkeit zwischen Risk, Security, Datenschutz und Fachbereich nie geklärt wurde. Die wirksamste Governance-Massnahme ist deshalb meist banal: eine Risikoklassifizierung, die festlegt, wer bei welcher Kategorie allein entscheiden darf. Alles andere ist Dokumentation.</span><span class="en-t block">It is rare for someone to forbid a use case outright. Far more often, nobody can be found who is allowed to approve it, because responsibility between risk, security, data protection and the business was never settled. The most effective governance measure is therefore usually mundane: a risk classification that sets out who may decide alone in which category. Everything else is documentation.</span></p>
       </div>
       <div class="pos">
         <span class="p-num">IV</span>
-        <h3><span class="de-t">Kaufen schlägt Bauen. Meistens. Aber nicht immer.</span><span class="en-t">Buy beats build. Usually. But not always.</span></h3>
-        <p><span class="de-t">Der Markt liefert inzwischen exzellente Bausteine; wer 2026 noch eine eigene Vektordatenbank schreibt, hat meist ein anderes Problem. Selbst bauen lohnt sich dort, wo Ihre Daten, Ihre Prozesse oder Ihre Regulierung tatsächlich einzigartig sind. Diese Grenze sauber zu ziehen, spart mehr Geld als jede Lizenzverhandlung.</span><span class="en-t block">The market now offers excellent building blocks; anyone still writing their own vector database in 2026 usually has a different problem. Building yourself pays off where your data, your processes or your regulation are actually unique. Drawing that line cleanly saves more money than any licence negotiation.</span></p>
+        <h3><span class="de-t">Kaufen ist billiger als bauen, bis Ihre Daten ins Spiel kommen.</span><span class="en-t">Buying is cheaper than building, until your data enters the picture.</span></h3>
+        <p><span class="de-t">Infrastruktur kauft man: Vektordatenbanken, Modell-Hosting, Observability. Der Teil, den Anbieter regelmässig unterschätzen, ist die Anbindung an Ihre Systeme, Ihre Berechtigungen und Ihre Datenqualität. Genau dort landen in unseren Projekten die meisten Aufwände, unabhängig davon, was auf dem Lizenzvertrag steht. Wer nur Lizenzkosten vergleicht, vergleicht den kleineren Posten.</span><span class="en-t block">Buy the infrastructure: vector databases, model hosting, observability. The part vendors routinely underestimate is the connection to your systems, your permissions and your data quality. In our projects that is where most of the effort ends up, regardless of what the licence agreement says. Comparing licence costs alone means comparing the smaller line item.</span></p>
       </div>
     </div>
   </div>
@@ -357,25 +358,25 @@
     <div class="sec-head">
       <span class="mono mono-a"><span class="de-t">§ 4 — Zusammenarbeit</span><span class="en-t">§ 4 — Working with us</span></span>
       <h2 style="margin-top:16px"><span class="de-t">Drei Wege, mit uns zu arbeiten.</span><span class="en-t block">Three ways to work with us.</span></h2>
-      <p class="body-l"><span class="de-t">Jedes Mandat wird auf Senior-Level geliefert: ohne Junior-Staffing, ohne Übergabe an ein zweites Team. Und auf der Flughöhe, die es braucht, von der Steering-Vorbereitung bis zum Pair-Programming mit Ihren Entwicklungsteams.</span><span class="en-t block">Every engagement is delivered at senior level: no junior staffing, no handover to a second team. And at whatever altitude the problem requires, from steering preparation down to pair programming with your engineering teams.</span></p>
+      <p class="body-l"><span class="de-t">Wir sind zu zweit. Wer die Offerte schreibt, sitzt auch bei Ihnen im Repository. Das begrenzt, wie viele Mandate wir parallel annehmen können, und bestimmt die drei Formate unten.</span><span class="en-t block">There are two of us. Whoever writes the proposal also sits in your repository. That limits how many engagements we can take in parallel, and it shapes the three formats below.</span></p>
     </div>
     <div class="eng-grid">
       <div class="eng glass">
         <span class="mono mono-a">A — Assessment</span>
         <h3><span class="de-t">Standortbestimmung</span><span class="en-t">Readiness Assessment</span></h3>
-        <p><span class="de-t">Wir prüfen Ihre GenAI-Initiativen, Architektur und Governance gegen den Stand der Praxis in regulierten Unternehmen. Sie erhalten ein schriftliches Gutachten mit priorisierten Massnahmen — und eine ehrliche Antwort auf die Frage, wo Sie stehen.</span><span class="en-t block">We review your GenAI initiatives, architecture and governance against the state of practice in regulated enterprises. You receive a written assessment with prioritised actions — and an honest answer to where you stand.</span></p>
+        <p><span class="de-t">Wir schauen uns an, was Sie gebaut haben: Architektur, Evaluationsergebnisse, Freigabeprozess, Kosten. Sie erhalten ein Dokument mit den Stellen, die Sie aufhalten werden, priorisiert nach Aufwand und Wirkung. Manchmal ist die ehrlichste Antwort, dass Sie uns danach nicht brauchen.</span><span class="en-t block">We look at what you have built: architecture, evaluation results, approval process, cost. You get a document listing the things that will hold you up, prioritised by effort and impact. Sometimes the most honest answer is that you won't need us afterwards.</span></p>
         <span class="dur"><span class="de-t">2–3 Wochen · Fixpreis</span><span class="en-t">2–3 weeks · fixed price</span></span>
       </div>
       <div class="eng glass">
         <span class="mono mono-a">B — Programm</span>
         <h3><span class="de-t">Enablement-Programm</span><span class="en-t">Enablement Programme</span></h3>
-        <p><span class="de-t">Wir bringen eine Ihrer Einheiten in den produktiven Agent- und GenAI-Betrieb: Arbeitsweisen, Tooling, Governance und ein erster Use Case bis zur Abnahme. Ihre Teams lernen am eigenen System — wir bleiben, bis es trägt.</span><span class="en-t block">We take one of your units into productive agent and GenAI operations: ways of working, tooling, governance and a first use case through to sign-off. Your teams learn on their own system — we stay until it holds.</span></p>
+        <p><span class="de-t">Ein Team, ein echter Use Case, von der Architektur bis zur Abnahme. Ihre Leute bauen, wir sitzen daneben und übernehmen die Teile, die neu für sie sind. Am Ende läuft das System und das Team kann das nächste ohne uns bauen. Das ist das Ziel, nicht der Folgeauftrag.</span><span class="en-t block">One team, one real use case, from architecture through to sign-off. Your people build, we sit alongside and take on the parts that are new to them. At the end the system runs and the team can build the next one without us. That is the goal, not the follow-up engagement.</span></p>
         <span class="dur"><span class="de-t">2–4 Monate · modular</span><span class="en-t">2–4 months · modular</span></span>
       </div>
       <div class="eng glass">
         <span class="mono mono-a">C — Sparring</span>
         <h3><span class="de-t">Sparring auf Stufe Führung</span><span class="en-t">Executive Sparring</span></h3>
-        <p><span class="de-t">Laufende Begleitung für CTOs, CIOs und Programmleitungen: Architektur-Entscheide, Anbieterwahl, Steering-Vorbereitung, Zweitmeinung vor grossen Commitments. Diskret, auf Abruf, ohne Overhead.</span><span class="en-t block">Ongoing counsel for CTOs, CIOs and programme leads: architecture decisions, vendor selection, steering preparation, second opinions before major commitments. Discreet, on call, without overhead.</span></p>
+        <p><span class="de-t">Für CTOs, CIOs und Programmleitungen, die jemanden brauchen, der die Technik versteht und nichts zu verkaufen hat: Architektur-Entscheide, Anbieterwahl, Zweitmeinung vor einem grossen Commitment. Meist ein bis zwei Stunden alle zwei Wochen, plus Zugriff, wenn es dringend wird.</span><span class="en-t block">For CTOs, CIOs and programme leads who need someone who understands the technology and has nothing to sell: architecture decisions, vendor selection, a second opinion before a large commitment. Usually one or two hours every fortnight, plus access when things get urgent.</span></p>
         <span class="dur"><span class="de-t">Retainer · monatlich kündbar</span><span class="en-t">Retainer · monthly notice</span></span>
       </div>
     </div>
@@ -387,31 +388,25 @@
     <div class="sec-head">
       <span class="mono mono-a">§ 5 — Team</span>
       <h2 style="margin-top:16px"><span class="de-t">Leute, die diese Systeme selbst bauen.</span><span class="en-t block">People who build these systems themselves.</span></h2>
-      <p class="body-l"><span class="de-t">Jedes Mandat wird von Personen betreut, die heute GenAI-Systeme in regulierten Schweizer Unternehmen verantworten. Das ist unser zentrales Verkaufsargument.</span><span class="en-t block">Every engagement is handled by people who carry responsibility for GenAI systems in regulated Swiss enterprises today. That is our central sales pitch.</span></p>
+      <p class="body-l"><span class="de-t">Zwei Gründer, beide mit einem Fuss weiterhin im Produktivbetrieb. Was Sie hier lesen, ist das ganze Team.</span><span class="en-t block">Two founders, both still with one foot in production. What you read here is the entire team.</span></p>
     </div>
 
     <div class="member glass">
       <div>
+        <img class="photo" src="team-sascha.jpg" alt="Dr. Sascha Jecklin" loading="lazy">
         <h3>Dr. Sascha Jecklin</h3>
         <span class="role"><span class="de-t">Mitgründer · Dr. sc. Data Science</span><span class="en-t">Co-founder · PhD Data Science</span></span>
       </div>
-      <p><span class="de-t">Sascha leitet das GenAI-Team eines führenden Schweizer Versicherers und verantwortet dort den Weg von der Idee bis zum produktiven System — inklusive Governance, Plattformwahl und der Einführung agentischer Entwicklung in den Engineering-Teams. Promotion in Data Science; publiziert und referiert zu angewandtem Machine Learning.</span><span class="en-t block">Sascha leads the GenAI team of a leading Swiss insurer, owning the path from idea to production system — including governance, platform selection and the introduction of agentic development across engineering teams. PhD in data science; publishes and speaks on applied machine learning.</span></p>
+      <p><span class="de-t">Sascha ist Tech Lead Data Science bei einem führenden Schweizer Versicherer und verantwortet dort GenAI-Systeme im Produktivbetrieb, darunter RAG-Backends mit über 360'000 Anfragen pro Jahr und agentische Workflows. Seine Arbeit läuft in beide Richtungen: AI-Systeme entwickeln und Engineering-Teams befähigen, mit AI zu entwickeln. Promotion in Data Science an der Universität Zürich mit Schwerpunkt 3D Computer Vision, elf peer-reviewte Publikationen und ein angemeldetes europäisches Patent. Zuvor Mitgründer und Technical Lead eines MedTech-Startups.</span><span class="en-t block">Sascha is tech lead data science at a leading Swiss insurer, responsible for GenAI systems in production, including RAG backends handling over 360,000 requests a year and agentic workflows. His work runs in both directions: building AI systems, and enabling engineering teams to build with AI. PhD in data science from the University of Zurich focused on 3D computer vision, with eleven peer-reviewed publications and a pending European patent. Previously co-founder and technical lead of a medtech startup.</span></p>
     </div>
 
     <div class="member glass">
       <div>
-        <h3>[Name Mitgründer:in 2]</h3>
-        <span class="role">[Rolle · Titel]</span>
+        <img class="photo" src="team-livio.jpg" alt="Livio Bieri" loading="lazy">
+        <h3>Livio Bieri</h3>
+        <span class="role"><span class="de-t">Mitgründer · Senior Software Engineer & Cloud-Architekt</span><span class="en-t">Co-founder · Senior Software Engineer & Cloud Architect</span></span>
       </div>
-      <p><span class="de-t">[Kurzprofil: aktuelle Rolle und Unternehmen, Verantwortung, Spezialgebiet — z.B. RAG-Plattformen, Cloud-Architektur auf Azure/GCP/AWS, Security. Zwei bis drei Sätze, konkret, ohne Superlative.]</span><span class="en-t block">[Short bio: current role and company, responsibility, specialty — e.g. RAG platforms, cloud architecture on Azure/GCP/AWS, security. Two or three sentences, concrete, no superlatives.]</span></p>
-    </div>
-
-    <div class="member glass">
-      <div>
-        <h3>[Name Mitgründer:in 3]</h3>
-        <span class="role">[Rolle · Titel]</span>
-      </div>
-      <p><span class="de-t">[Kurzprofil: aktuelle Rolle und Unternehmen, Verantwortung, Spezialgebiet — z.B. Agents in Produktion, MLOps, Monitoring & Evaluation. Zwei bis drei Sätze.]</span><span class="en-t block">[Short bio: current role and company, responsibility, specialty — e.g. agents in production, MLOps, monitoring & evaluation. Two or three sentences.]</span></p>
+      <p><span class="de-t">Livio baut seit über 15 Jahren produktive Software für Schweizer Unternehmen, vom IoT-Startup bis zum regulierten Grosskonzern. Aktuell entwickelt er GenAI-Tools und Kerninfrastruktur bei einem führenden Schweizer Versicherer. Davor: Cloud-Architektur und Serverless-Systeme auf AWS für Verity und CARU sowie Deep-Learning-Produkterkennung bei Fashwell, das von Apple übernommen wurde. Partner der Software-Boutique Lola.</span><span class="en-t block">Livio has been building production software for Swiss companies for over 15 years, from IoT startups to regulated enterprises. He currently builds GenAI tools and core infrastructure at a leading Swiss insurer. Before that: cloud architecture and serverless systems on AWS for Verity and CARU, and deep-learning product recognition at Fashwell, which was acquired by Apple. Partner at software boutique Lola.</span></p>
     </div>
   </div>
 </section>
@@ -420,8 +415,8 @@
   <div class="wrap">
     <div class="ws-cta-panel glass">
       <span class="mono mono-a"><span class="de-t">Nächste Gelegenheit</span><span class="en-t">Next opportunity</span></span>
-      <h2 style="margin-top:16px"><span class="de-t">Ein Tag, der Ihrem Unternehmen ein Jahr Umwege erspart.</span><span class="en-t block">One day that saves your organisation a year of detours.</span></h2>
-      <p><span class="de-t">Unser Executive Workshop «Enterprise GenAI in der Praxis» kondensiert alles Obenstehende in einen Tag: Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security, Make-or-Buy. Maximal 16 Teilnehmende, damit am Ende Ihr Fahrplan steht — nicht unserer.</span><span class="en-t block">Our executive workshop "Enterprise GenAI in Practice" condenses everything above into one day: agents, RAG, governance, cloud choice, Swiss hosting, security, make-or-buy. A maximum of 16 participants, so that by the end the roadmap on the wall is yours — not ours.</span></p>
+      <h2 style="margin-top:16px"><span class="de-t">Einen Tag lang die Fragen stellen, die sonst offen bleiben.</span><span class="en-t block">A day for the questions that otherwise stay open.</span></h2>
+      <p><span class="de-t">Unser Executive Workshop «Enterprise GenAI in der Praxis»: Agents, RAG, Governance, Cloud-Wahl, Swiss Hosting, Security, Make-or-Buy. Am Nachmittag angewendet auf Ihre Ausgangslage. Maximal 16 Teilnehmende, damit am Ende Ihr Fahrplan steht, nicht unserer.</span><span class="en-t block">Our executive workshop "Enterprise GenAI in Practice": agents, RAG, governance, cloud choice, Swiss hosting, security, make-or-buy. Applied in the afternoon to your own situation. A maximum of 16 participants, so that by the end the roadmap on the wall is yours, not ours.</span></p>
       <div class="btn-row">
         <a class="btn btn-grad" href="workshop.html"><span class="de-t">Workshop ansehen</span><span class="en-t">View the workshop</span></a>
         <a class="btn btn-glass" href="mailto:hello@euler-lab.ch?subject=Inhouse%20Workshop"><span class="de-t">Inhouse anfragen</span><span class="en-t">Request in-house</span></a>
@@ -443,19 +438,19 @@
     </details>
     <details>
       <summary><span class="de-t">Seid ihr an einen Cloud-Anbieter oder Hersteller gebunden?</span><span class="en-t">Are you tied to a cloud provider or vendor?</span></summary>
-      <div class="a"><span class="de-t">Nein. Wir haben auf Azure, GCP und AWS gebaut und empfehlen, was zu Ihrer Ausgangslage passt — inklusive der Option, bei Ihrem bestehenden Anbieter zu bleiben. Wir erhalten keine Provisionen oder Kickbacks von Herstellern. Wenn sich das je ändern sollte, steht es in unseren Offerten.</span><span class="en-t block">No. We have built on Azure, GCP and AWS and recommend what fits your situation — including the option of staying with your current provider. We receive no commissions or kickbacks from vendors. Should that ever change, it will say so in our proposals.</span></div>
+      <div class="a"><span class="de-t">Nein. Wir haben auf Azure, GCP und AWS gebaut und empfehlen, was zu Ihrer Ausgangslage passt, inklusive der Option, bei Ihrem bestehenden Anbieter zu bleiben. Wir erhalten keine Provisionen oder Kickbacks von Herstellern. Wenn sich das je ändern sollte, steht es in unseren Offerten.</span><span class="en-t block">No. We have built on Azure, GCP and AWS and recommend what fits your situation, including the option of staying with your current provider. We receive no commissions or kickbacks from vendors. Should that ever change, it will say so in our proposals.</span></div>
     </details>
     <details>
       <summary><span class="de-t">Wie geht ihr mit Interessenkonflikten um?</span><span class="en-t">How do you handle conflicts of interest?</span></summary>
       <div class="a"><span class="de-t">Strikt. Wir legen mögliche Konflikte vor Mandatsbeginn offen, verwenden keine vertraulichen Informationen und lehnen Mandate ab, bei denen wir nicht frei arbeiten können. Was wir teilen, ist Methodenwissen und Erfahrung, keine Interna.</span><span class="en-t block">Strictly. We disclose potential conflicts before any engagement begins, use no confidential information, and decline engagements where we cannot act freely. What we share is methodology and experience, not internals.</span></div>
     </details>
     <details>
-      <summary><span class="de-t">Macht ihr auch Umsetzung — oder nur Konzepte?</span><span class="en-t">Do you also implement — or only write concepts?</span></summary>
+      <summary><span class="de-t">Macht ihr auch Umsetzung oder nur Konzepte?</span><span class="en-t">Do you also implement or only write concepts?</span></summary>
       <div class="a"><span class="de-t">Beides, mit klarer Präferenz: Wir glauben nicht an Konzepte, die andere umsetzen sollen. In Enablement-Programmen arbeiten wir hands-on mit Ihren Teams an Ihrem System. Für reine Body-Leasing-Anfragen («drei Entwickler für sechs Monate») sind wir die falsche Adresse.</span><span class="en-t block">Both, with a clear preference: we don't believe in concepts that others are supposed to implement. In enablement programmes we work hands-on with your teams on your system. For pure body-leasing requests ("three developers for six months") we are the wrong address.</span></div>
     </details>
     <details>
       <summary><span class="de-t">Für wen seid ihr nicht die Richtigen?</span><span class="en-t">Who are you not right for?</span></summary>
-      <div class="a"><span class="de-t">Wenn Sie ein Logo für die nächste Strategie-Folie suchen, eine Armee von Beratern für ein Grossprogramm brauchen oder GenAI primär als Kommunikationsthema verstehen — dann gibt es bessere Adressen. Wir sind am stärksten, wenn etwas Konkretes in Produktion soll und die Organisation dafür fit werden muss.</span><span class="en-t block">If you are looking for a logo for the next strategy slide, need an army of consultants for a mega-programme, or see GenAI primarily as a communications topic — there are better addresses. We are strongest when something concrete needs to reach production and the organisation has to get fit for it.</span></div>
+      <div class="a"><span class="de-t">Wenn Sie ein Logo für die nächste Strategie-Folie suchen, eine Armee von Beratern für ein Grossprogramm brauchen oder GenAI primär als Kommunikationsthema verstehen, dann gibt es bessere Adressen. Wir sind am stärksten, wenn etwas Konkretes in Produktion soll und die Organisation dafür fit werden muss.</span><span class="en-t block">If you are looking for a logo for the next strategy slide, need an army of consultants for a mega-programme, or see GenAI primarily as a communications topic, there are better addresses. We are strongest when something concrete needs to reach production and the organisation has to get fit for it.</span></div>
     </details>
   </div>
 </section>
@@ -477,8 +472,8 @@
       <div>
         <p class="foot-h">euler-lab</p>
         <p class="foot-legal">
-          <span class="de-t">euler-lab ist eine unabhängige Beratung für generative KI im Unternehmenseinsatz mit Sitz in Zürich. Wir erbringen Beratungs-, Enablement- und Schulungsleistungen; wir sind kein Software-Hersteller und keine Rechtsberatung. Aussagen zu regulatorischen Themen geben Erfahrungswerte wieder und ersetzen keine rechtliche Prüfung im Einzelfall. Benannt nach Leonhard Euler, Basel 1707 — dem Beweis, dass Schweizer Gründlichkeit und radikale Innovation kein Widerspruch sind.</span>
-          <span class="en-t block">euler-lab is an independent advisory firm for generative AI in the enterprise, based in Zurich. We provide advisory, enablement and training services; we are not a software vendor and not a law firm. Statements on regulatory topics reflect practical experience and do not replace legal review of individual cases. Named after Leonhard Euler, Basel 1707 — proof that Swiss rigour and radical innovation are not a contradiction.</span>
+          <span class="de-t">euler-lab ist eine unabhängige Beratung für generative KI im Unternehmenseinsatz mit Sitz in Zürich. Wir erbringen Beratungs-, Enablement- und Schulungsleistungen; wir sind kein Software-Hersteller und keine Rechtsberatung. Aussagen zu regulatorischen Themen geben Erfahrungswerte wieder und ersetzen keine rechtliche Prüfung im Einzelfall. Benannt nach Leonhard Euler, Basel 1707, dem Beweis, dass Schweizer Gründlichkeit und radikale Innovation kein Widerspruch sind.</span>
+          <span class="en-t block">euler-lab is an independent advisory firm for generative AI in the enterprise, based in Zurich. We provide advisory, enablement and training services; we are not a software vendor and not a law firm. Statements on regulatory topics reflect practical experience and do not replace legal review of individual cases. Named after Leonhard Euler, Basel 1707, proof that Swiss rigour and radical innovation are not a contradiction.</span>
         </p>
       </div>
       <div>
@@ -529,7 +524,7 @@
     {"@type": "Question", "name": "Wer arbeitet konkret auf unserem Mandat?", "acceptedAnswer": {"@type": "Answer", "text": "Ausschliesslich die genannten Personen: kein Junior-Staffing, keine Subunternehmer. Dafür bewusst wenige Mandate parallel."}},
     {"@type": "Question", "name": "Seid ihr an einen Cloud-Anbieter oder Hersteller gebunden?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Wir haben auf Azure, GCP und AWS gebaut und empfehlen, was zur Ausgangslage passt. Wir erhalten keine Provisionen oder Kickbacks von Herstellern."}},
     {"@type": "Question", "name": "Wie geht ihr mit Interessenkonflikten um?", "acceptedAnswer": {"@type": "Answer", "text": "Offenlegung möglicher Konflikte vor Mandatsbeginn, keine vertraulichen Informationen, Ablehnung von Mandaten ohne freie Hand."}},
-    {"@type": "Question", "name": "Macht ihr auch Umsetzung — oder nur Konzepte?", "acceptedAnswer": {"@type": "Answer", "text": "Beides, mit klarer Präferenz für Hands-on: In Enablement-Programmen arbeiten wir direkt mit den Teams am eigenen System. Reines Body-Leasing bieten wir nicht an."}},
+    {"@type": "Question", "name": "Macht ihr auch Umsetzung oder nur Konzepte?", "acceptedAnswer": {"@type": "Answer", "text": "Beides, mit klarer Präferenz für Hands-on: In Enablement-Programmen arbeiten wir direkt mit den Teams am eigenen System. Reines Body-Leasing bieten wir nicht an."}},
     {"@type": "Question", "name": "Für wen seid ihr nicht die Richtigen?", "acceptedAnswer": {"@type": "Answer", "text": "Für Strategie-Folien ohne Umsetzungsabsicht oder Grossprogramme mit Berater-Armeen. Wir sind am stärksten, wenn etwas Konkretes in Produktion soll."}}
   ]
 }
